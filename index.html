@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-AgARENA | Climate-Smart Agriculture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-1: #8fdbf2;
+            --color-2: #87ceeb;
+            --color-3: #6ba31c;
+            --color-4: #5a9216;
+            --color-5: #4a8c2a;
+            --color-6: #457c28;
+            --color-7: #406d25;
+            --color-8: #b87333;
+            --color-9: #341e10;
+            --color-10: #7e5422;
+            --color-11: #eea642;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--color-4);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-11);
+        }
+
+        .nav-links a.active {
+            color: var(--color-11);
+            border-bottom: 2px solid var(--color-11);
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            flex: 1;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--color-2);
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 2rem;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--color-4);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-5);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .btn-secondary {
+            background: var(--color-11);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-8);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--color-4);
+            text-align: center;
+        }
+
+        /* About Section */
+        .about-content {
+            background: var(--color-1);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .about-content h3 {
+            color: var(--color-5);
+            margin-bottom: 1rem;
+        }
+
+        /* Research Cards */
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--color-3);
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .research-card h3 {
+            color: var(--color-4);
+            margin-bottom: 1rem;
+        }
+
+        /* Impact Section */
+        .impact-section {
+            background: var(--color-3);
+            color: white;
+            border-radius: 10px;
+            padding: 3rem;
+        }
+
+        .impact-section h2 {
+            color: white;
+        }
+
+        .impact-section > p {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .impact-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Get Involved Section */
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .involvement-card {
+            background: var(--color-11);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .involvement-card:hover {
+            transform: scale(1.05);
+        }
+
+        .involvement-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .involvement-card p {
+            margin-bottom: 0;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .news-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-3);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .news-item h3 {
+            color: var(--color-4);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Resources Section */
+        .resources-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .resource-item {
+            background: var(--color-1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .resource-item:hover {
+            background: var(--color-2);
+            transform: translateY(-3px);
+        }
+
+        .resource-item h3 {
+            color: var(--color-5);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: var(--color-5);
+            color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin: 1rem 0;
+        }
+
+        .contact-info strong {
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .partner-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .partner-logo-placeholder {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 1rem;
+            background: var(--color-1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .partner-logo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .partner-card h3 {
+            color: var(--color-4);
+        }
+
+        /* Faculty Grid */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .faculty-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .faculty-photo-placeholder {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: var(--color-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .faculty-photo-placeholder img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .faculty-card h4 {
+            color: var(--color-5);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .faculty-title {
+            color: var(--color-10);
+            font-style: italic;
+            margin-bottom: 0.3rem;
+        }
+
+        .faculty-affiliation {
+            color: var(--color-4);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--color-9);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: auto;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--color-4);
+                padding: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-logo {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo" onclick="navigateTo('home')">AI-AgARENA</div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a onclick="navigateTo('home')" data-page="home">Home</a></li>
+                <li><a onclick="navigateTo('about')" data-page="about">About</a></li>
+                <li><a onclick="navigateTo('research')" data-page="research">Research</a></li>
+                <li><a onclick="navigateTo('impact')" data-page="impact">Impact</a></li>
+                <li><a onclick="navigateTo('get-involved')" data-page="get-involved">Get Involved</a></li>
+                <li><a onclick="navigateTo('news')" data-page="news">News & Events</a></li>
+                <li><a onclick="navigateTo('resources')" data-page="resources">Resources</a></li>
+                <li><a onclick="navigateTo('contact')" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <img src="AI-AgArena.svg" alt="AI-AgARENA Logo" class="hero-logo">
+            <h1>AI-AgARENA: Advancing AI for Climate-Smart Agriculture</h1>
+            <p>A national testbed enabling AI-driven solutions for sustainable farming, climate resilience, and food security.</p>
+            <div class="hero-buttons">
+                <button onclick="navigateTo('about')" class="btn btn-primary">About</button>
+                <button onclick="navigateTo('research')" class="btn btn-secondary">Research</button>
+                <button onclick="navigateTo('get-involved')" class="btn btn-primary">Get Involved</button>
+            </div>
+        </section>
+        
+        <section>
+            <h2>What is AI-AgARENA?</h2>
+            <div class="about-content">
+                <p>AI-AgARENA is a multi-site, AI-ready testbed designed to accelerate research in cyber-agricultural systems. By bringing together cutting-edge technology and agricultural expertise, we are transforming how farming responds to climate challenges.</p>
+                <br>
+                <p>Our testbed integrates real-time sensing technologies that monitor soil conditions, plant health, and weather patterns. Advanced robotics work alongside AI tools to create a comprehensive data-driven enterprise. This integration enables researchers and farmers to make smarter decisions, optimize resource use, and develop innovative solutions for sustainable agriculture.</p>
+                <br>
+                <p>Through this national infrastructure, we're building the foundation for climate-smart farming practices that ensure food security while protecting our environment for future generations.</p>
+            </div>
+            
+            <h2 style="margin-top: 3rem;">Our Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="isu.png" alt="Iowa State University Logo">
+                    </div>
+                    <h3>Iowa State University</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="UA.png" alt="University of Arizona Logo">
+                    </div>
+                    <h3>University of Arizona</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="OSU.png" alt="Ohio State University Logo">
+                    </div>
+                    <h3>Ohio State University</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section>
+            <h2>About Us</h2>
+            <div class="about-content">
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Leading institutions collaborating to advance AI in agriculture</p>
+            </div>
+            
+            <h3 style="text-align: center; color: var(--color-4); margin-bottom: 2rem;">Partner Universities</h3>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="isu.png" alt="Iowa State University Logo">
+                    </div>
+                    <h3>Iowa State University</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="UA.png" alt="University of Arizona Logo">
+                    </div>
+                    <h3>University of Arizona</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="OSU.png" alt="Ohio State University Logo">
+                    </div>
+                    <h3>Ohio State University</h3>
+                </div>
+            </div>
+            
+            <h3 style="text-align: center; color: var(--color-4); margin: 3rem 0 2rem;">Faculty & Leadership</h3>
+            <div class="faculty-grid">
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-1.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">Iowa State University</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-2.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">University of Arizona</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-3.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">Ohio State University</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-4.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">[University Affiliation]</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-5.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">[University Affiliation]</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-6.png" alt="Faculty Member">
+                    </div>
+                    <h4>Dr. [Faculty Name]</h4>
+                    <p class="faculty-title">[Title/Position]</p>
+                    <p class="faculty-affiliation">[University Affiliation]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Research Page -->
+    <div id="research" class="page">
+        <section>
+            <h2>Research</h2>
+            <div class="research-grid">
+                <div class="research-card">
+                    <h3>Multimodal Sensing & Data Fusion</h3>
+                    <p>Combining soil, plant, and weather data for smarter decisions.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Digital Twins in Agriculture</h3>
+                    <p>Virtual models of farms for predictive analytics.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Ag Robotics</h3>
+                    <p>Autonomous machines for precision farming.</p>
+                </div>
+                <div class="research-card">
+                    <h3>AI Foundation Models</h3>
+                    <p>Large-scale AI models tailored for agriculture.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Impact Page -->
+    <div id="impact" class="page">
+        <section>
+            <div class="impact-section">
+                <h2>Impact</h2>
+                <p>Driving Sustainability and Food Security</p>
+                <div class="impact-content">
+                    <p>AI-AgARENA supports climate-resilient farming practices and ensures equitable access to AI-driven technologies.</p>
+                    <p><strong>Education & Outreach:</strong> From K-12 workshops to VR-based Farmverse experiences, we're building the next-generation workforce.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Get Involved Page -->
+    <div id="get-involved" class="page">
+        <section>
+            <h2>Get Involved</h2>
+            <div class="involvement-grid">
+                <div class="involvement-card">
+                    <h3>Researchers</h3>
+                    <p>Access our testbed for your AI projects.</p>
+                </div>
+                <div class="involvement-card">
+                    <h3>Students</h3>
+                    <p>Join internships, coursework, and VR learning.</p>
+                </div>
+                <div class="involvement-card">
+                    <h3>Industry & Government</h3>
+                    <p>Partner with us to shape the future of agriculture.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- News & Events Page -->
+    <div id="news" class="page">
+        <section>
+            <h2>News & Events</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <h3>Upcoming Webinar: "AI in Agriculture: Opportunities and Challenges"</h3>
+                    <p>Register Now!</p>
+                </div>
+                <div class="news-item">
+                    <h3>Recent Workshop</h3>
+                    <p>Highlights from our AI-AgARENA planning sessions.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Resources Page -->
+    <div id="resources" class="page">
+        <section>
+            <h2>Resources</h2>
+            <div class="resources-list">
+                <div class="resource-item">
+                    <h3>Publications</h3>
+                </div>
+                <div class="resource-item">
+                    <h3>Data Access</h3>
+                    <p>(coming soon)</p>
+                </div>
+                <div class="resource-item">
+                    <h3>Educational Materials</h3>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <h3>Have questions or want to collaborate?</h3>
+                <p><strong>Email:</strong> info@ai-agarena.org</p>
+                <p><strong>Address:</strong> Iowa State University, Ames, IA</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 AI-AgARENA. All rights reserved.</p>
+        <p>Advancing AI for Climate-Smart Agriculture</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function navigateTo(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected page
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+            
+            // Update active nav link
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => link.classList.remove('active'));
+            const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu
+            document.getElementById('navLinks').classList.remove('active');
+        }
+
+        // Set home as active on load
+        window.addEventListener('load', () => {
+            navigateTo('home');
+        });
+    </script>
+</body>
+</html>
