@@ -95,10 +95,10 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--color-2) 0%, var(--color-4) 100%);
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             padding: 6rem 2rem 4rem;
             text-align: center;
-            color: white;
+            color: #333;
         }
 
         .hero-logo {
@@ -142,23 +142,24 @@
         }
 
         .btn-primary {
-            background: var(--color-5);
+            background: var(--color-4);
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--color-6);
+            background: var(--color-5);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .btn-secondary {
             background: var(--color-11);
-            color: white;
+            color: #333;
         }
 
         .btn-secondary:hover {
             background: var(--color-8);
+            color: white;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -198,7 +199,7 @@
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
+            background: #f1f8e9;
             padding: 2rem;
             border-radius: 10px;
             margin: 2rem 0;
@@ -208,6 +209,10 @@
         .highlight-box h3 {
             color: var(--color-5);
             margin-bottom: 1rem;
+        }
+
+        .highlight-box p {
+            color: #333;
         }
 
         /* Infrastructure Section */
@@ -281,18 +286,19 @@
 
         /* Impact Section */
         .impact-section {
-            background: linear-gradient(135deg, var(--color-3) 0%, var(--color-5) 100%);
-            color: white;
+            background: #e8f5e9;
+            color: #333;
             border-radius: 10px;
             padding: 3rem;
+            border: 2px solid var(--color-3);
         }
 
         .impact-section h2 {
-            color: white;
+            color: var(--color-4);
         }
 
         .impact-section h3 {
-            color: white;
+            color: var(--color-5);
             margin-top: 2rem;
         }
 
@@ -300,11 +306,13 @@
             text-align: center;
             font-size: 1.2rem;
             margin-bottom: 2rem;
+            color: #333;
         }
 
         .impact-content p {
             margin-bottom: 1.5rem;
             line-height: 1.8;
+            color: #333;
         }
 
         .impact-list {
@@ -315,6 +323,11 @@
         .impact-list li {
             margin-bottom: 1rem;
             line-height: 1.7;
+            color: #333;
+        }
+
+        .impact-list strong {
+            color: var(--color-5);
         }
 
         /* Get Involved Section */
@@ -326,11 +339,12 @@
         }
 
         .involvement-card {
-            background: var(--color-11);
-            color: white;
+            background: #fff3e0;
+            color: #333;
             padding: 2rem;
             border-radius: 10px;
             transition: transform 0.3s;
+            border: 2px solid var(--color-11);
         }
 
         .involvement-card:hover {
@@ -340,11 +354,13 @@
 
         .involvement-card h3 {
             margin-bottom: 1rem;
+            color: var(--color-8);
         }
 
         .involvement-card p {
             margin-bottom: 0;
             line-height: 1.7;
+            color: #333;
         }
 
         /* News Section */
@@ -394,7 +410,7 @@
         }
 
         .news-featured {
-            background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
+            background: #e3f2fd;
             border-left: 4px solid var(--color-4);
         }
 
@@ -407,15 +423,16 @@
         }
 
         .resource-item {
-            background: var(--color-1);
+            background: #f1f8e9;
             padding: 1.5rem;
             border-radius: 8px;
             text-align: center;
             transition: all 0.3s;
+            border: 2px solid var(--color-3);
         }
 
         .resource-item:hover {
-            background: var(--color-2);
+            background: #dcedc8;
             transform: translateY(-3px);
         }
 
@@ -424,27 +441,35 @@
             margin-bottom: 0.5rem;
         }
 
+        .resource-item p {
+            color: #666;
+        }
+
         /* Contact Section */
         .contact-info {
-            background: var(--color-5);
-            color: white;
+            background: #e8f5e9;
+            color: #333;
             padding: 3rem;
             border-radius: 10px;
             text-align: center;
+            border: 2px solid var(--color-4);
         }
 
         .contact-info h3 {
             margin-bottom: 1.5rem;
+            color: var(--color-5);
         }
 
         .contact-info p {
             font-size: 1.1rem;
             margin: 1rem 0;
+            color: #333;
         }
 
         .contact-info strong {
             display: inline-block;
             margin-right: 0.5rem;
+            color: var(--color-4);
         }
 
         /* Partners Grid */
@@ -472,7 +497,7 @@
             width: 150px;
             height: 150px;
             margin: 0 auto 1rem;
-            background: var(--color-1);
+            background: white;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -498,9 +523,27 @@
         /* Faculty Grid */
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 2rem;
             margin-top: 2rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .faculty-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .faculty-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .faculty-card {
