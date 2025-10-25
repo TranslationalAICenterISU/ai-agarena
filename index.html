@@ -39,6 +39,9 @@
             background: var(--color-4);
             padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .nav-container {
@@ -92,7 +95,7 @@
 
         /* Hero Section */
         .hero {
-            background: var(--color-2);
+            background: linear-gradient(135deg, var(--color-2) 0%, var(--color-4) 100%);
             padding: 6rem 2rem 4rem;
             text-align: center;
             color: white;
@@ -139,12 +142,12 @@
         }
 
         .btn-primary {
-            background: var(--color-4);
+            background: var(--color-5);
             color: white;
         }
 
         .btn-primary:hover {
-            background: var(--color-5);
+            background: var(--color-6);
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -174,23 +177,80 @@
             text-align: center;
         }
 
+        section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--color-5);
+        }
+
         /* About Section */
         .about-content {
-            background: var(--color-1);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--color-4);
+        }
+
+        .highlight-box h3 {
+            color: var(--color-5);
+            margin-bottom: 1rem;
+        }
+
+        /* Infrastructure Section */
+        .infrastructure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .infrastructure-card {
+            background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--color-3);
         }
 
-        .about-content h3 {
-            color: var(--color-5);
+        .infrastructure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .infrastructure-card h3 {
+            color: var(--color-4);
             margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .infrastructure-card ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .infrastructure-card li {
+            margin-bottom: 0.5rem;
         }
 
         /* Research Cards */
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -212,11 +272,16 @@
         .research-card h3 {
             color: var(--color-4);
             margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .research-card p {
+            line-height: 1.7;
         }
 
         /* Impact Section */
         .impact-section {
-            background: var(--color-3);
+            background: linear-gradient(135deg, var(--color-3) 0%, var(--color-5) 100%);
             color: white;
             border-radius: 10px;
             padding: 3rem;
@@ -224,6 +289,11 @@
 
         .impact-section h2 {
             color: white;
+        }
+
+        .impact-section h3 {
+            color: white;
+            margin-top: 2rem;
         }
 
         .impact-section > p {
@@ -234,6 +304,17 @@
 
         .impact-content p {
             margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .impact-list {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .impact-list li {
+            margin-bottom: 1rem;
+            line-height: 1.7;
         }
 
         /* Get Involved Section */
@@ -254,6 +335,7 @@
 
         .involvement-card:hover {
             transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
         }
 
         .involvement-card h3 {
@@ -262,6 +344,7 @@
 
         .involvement-card p {
             margin-bottom: 0;
+            line-height: 1.7;
         }
 
         /* News Section */
@@ -273,7 +356,7 @@
 
         .news-item {
             background: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
             border-left: 4px solid var(--color-3);
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -281,7 +364,38 @@
 
         .news-item h3 {
             color: var(--color-4);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .news-item h4 {
+            color: var(--color-5);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .news-item p {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+
+        .news-item ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .news-item ul li {
             margin-bottom: 0.5rem;
+        }
+
+        .news-item strong {
+            color: var(--color-4);
+        }
+
+        .news-featured {
+            background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 100%);
+            border-left: 4px solid var(--color-4);
         }
 
         /* Resources Section */
@@ -376,10 +490,15 @@
             color: var(--color-4);
         }
 
+        .partner-card p {
+            margin-top: 0.5rem;
+            color: #666;
+        }
+
         /* Faculty Grid */
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
@@ -482,6 +601,10 @@
             .hero-logo {
                 max-width: 200px;
             }
+
+            section {
+                padding: 2rem 1rem;
+            }
         }
     </style>
 </head>
@@ -494,6 +617,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a onclick="navigateTo('home')" data-page="home">Home</a></li>
                 <li><a onclick="navigateTo('about')" data-page="about">About</a></li>
+                <li><a onclick="navigateTo('infrastructure')" data-page="infrastructure">Infrastructure</a></li>
                 <li><a onclick="navigateTo('research')" data-page="research">Research</a></li>
                 <li><a onclick="navigateTo('impact')" data-page="impact">Impact</a></li>
                 <li><a onclick="navigateTo('get-involved')" data-page="get-involved">Get Involved</a></li>
@@ -509,10 +633,10 @@
         <section class="hero">
             <img src="AI-AgArena.svg" alt="AI-AgARENA Logo" class="hero-logo">
             <h1>AI-AgARENA: Advancing AI for Climate-Smart Agriculture</h1>
-            <p>A national testbed enabling AI-driven solutions for sustainable farming, climate resilience, and food security.</p>
+            <p>A national, multi-site AI-ready testbed enabling cutting-edge research in cyber-agricultural systems for sustainable farming, climate resilience, and food security.</p>
             <div class="hero-buttons">
-                <button onclick="navigateTo('about')" class="btn btn-primary">About</button>
-                <button onclick="navigateTo('research')" class="btn btn-secondary">Research</button>
+                <button onclick="navigateTo('about')" class="btn btn-primary">Learn More</button>
+                <button onclick="navigateTo('research')" class="btn btn-secondary">Our Research</button>
                 <button onclick="navigateTo('get-involved')" class="btn btn-primary">Get Involved</button>
             </div>
         </section>
@@ -520,33 +644,46 @@
         <section>
             <h2>What is AI-AgARENA?</h2>
             <div class="about-content">
-                <p>AI-AgARENA is a multi-site, AI-ready testbed designed to accelerate research in cyber-agricultural systems. By bringing together cutting-edge technology and agricultural expertise, we are transforming how farming responds to climate challenges.</p>
-                <br>
-                <p>Our testbed integrates real-time sensing technologies that monitor soil conditions, plant health, and weather patterns. Advanced robotics work alongside AI tools to create a comprehensive data-driven enterprise. This integration enables researchers and farmers to make smarter decisions, optimize resource use, and develop innovative solutions for sustainable agriculture.</p>
-                <br>
-                <p>Through this national infrastructure, we're building the foundation for climate-smart farming practices that ensure food security while protecting our environment for future generations.</p>
+                <p>AI-AgARENA (AI-ready Cyber-Agricultural Systems Testbed) is a groundbreaking multi-state, multi-site platform designed to accelerate AI research for climate-smart agriculture. This living laboratory integrates autonomous farm management, continuous real-time sensing of soil and plant conditions, weather monitoring, and intelligent data harvesting for analysis and visualization.</p>
+                
+                <p>Our testbed brings together existing agricultural research platforms at Iowa State University, University of Arizona, and Ohio State University, enhanced with advanced wireless networking, sensors, ground robots, and drones. This comprehensive infrastructure enables researchers to develop and validate AI tools for cyber-agricultural systems at scale.</p>
+                
+                <p>AI-AgARENA serves as a national AI-Agriculture research hub, stimulating collaborations within an innovation ecosystem to improve sustainable farming practices, increase climate resiliency, and ensure food security. The testbed enables AI-Agriculture technology demonstrations through at-scale implementation for private-public-producer organizations and serves as a venue for stakeholder education across public, private, NGO, and governmental agencies.</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Our Vision</h3>
+                <p>To democratize access to real-scale agriculture testbeds for AI researchers, fostering collaboration between domain experts, testbed infrastructure designers and builders, demonstration project researchers, and a network of guest AI researchers and industry partners for beta testing and continuous improvement.</p>
             </div>
             
-            <h2 style="margin-top: 3rem;">Our Partners</h2>
+            <h2 style="margin-top: 3rem;">Partner Institutions</h2>
             <div class="partners-grid">
                 <div class="partner-card">
                     <div class="partner-logo-placeholder">
                         <img src="isu.png" alt="Iowa State University Logo">
                     </div>
                     <h3>Iowa State University</h3>
+                    <p>Core Facility: 40+ acres dedicated testbed with advanced sensing and robotics</p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo-placeholder">
                         <img src="UA.png" alt="University of Arizona Logo">
                     </div>
                     <h3>University of Arizona</h3>
+                    <p>Field Scanner facility and Yuma Farms (500+ acres) for diverse crop research</p>
                 </div>
                 <div class="partner-card">
                     <div class="partner-logo-placeholder">
                         <img src="OSU.png" alt="Ohio State University Logo">
                     </div>
                     <h3>Ohio State University</h3>
+                    <p>Molly Caren Agricultural Center: 2,100 acres with 5G connectivity</p>
                 </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>International Partnership</h3>
+                <p>AI-AgARENA collaborates with the Netherlands Plant Eco-phenotyping Center (NPEC) at Wageningen University & Research (WUR), leveraging best practices and learning from their experience in building democratized AI-Agriculture testbeds.</p>
             </div>
         </section>
     </div>
@@ -554,82 +691,213 @@
     <!-- About Page -->
     <div id="about" class="page">
         <section>
-            <h2>About Us</h2>
+            <h2>About AI-AgARENA</h2>
             <div class="about-content">
-                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">Leading institutions collaborating to advance AI in agriculture</p>
+                <p style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">A Multidisciplinary Collaboration for Agricultural Innovation</p>
+                
+                <h3>Our Team</h3>
+                <p>AI-AgARENA brings together a diverse, multidisciplinary team of experts including plant scientists, agronomists, AI specialists, roboticists, wireless communications experts, cyberinfrastructure and cybersecurity professionals, designers, extension staff, education experts, and entrepreneurs from three leading research universities.</p>
+                
+                <h3 style="margin-top: 2rem;">Foundation Projects</h3>
+                <p>Our team leads several major federally funded projects that provide the foundation for AI-AgARENA:</p>
+                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                    <li><strong>COALESCE:</strong> NSF CPS Frontier grant on sustainable agriculture focusing on context-aware learning for cyber-agricultural systems</li>
+                    <li><strong>AIIRA:</strong> National AI Institute for Resilient Agriculture at Iowa State University</li>
+                    <li><strong>ICICLE:</strong> National AI Institute at Ohio State with significant agricultural applications focus</li>
+                    <li><strong>ARA:</strong> NSF PAWR platform providing 5G-and-beyond wireless living lab connectivity to agriculture farms</li>
+                    <li><strong>CyVerse:</strong> Scalable cyberinfrastructure platform for collaborative data-driven discovery</li>
+                </ul>
             </div>
             
-            <h3 style="text-align: center; color: var(--color-4); margin-bottom: 2rem;">Partner Universities</h3>
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <div class="partner-logo-placeholder">
-                        <img src="isu.png" alt="Iowa State University Logo">
-                    </div>
-                    <h3>Iowa State University</h3>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo-placeholder">
-                        <img src="UA.png" alt="University of Arizona Logo">
-                    </div>
-                    <h3>University of Arizona</h3>
-                </div>
-                <div class="partner-card">
-                    <div class="partner-logo-placeholder">
-                        <img src="OSU.png" alt="Ohio State University Logo">
-                    </div>
-                    <h3>Ohio State University</h3>
-                </div>
-            </div>
-            
-            <h3 style="text-align: center; color: var(--color-4); margin: 3rem 0 2rem;">Faculty & Leadership</h3>
+            <h3 style="text-align: center; color: var(--color-4); margin: 3rem 0 2rem;">Project Leadership</h3>
             <div class="faculty-grid">
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-1.png" alt="Faculty Member">
+                        <img src="faculty-photo-1.png" alt="Dr. Soumik Sarkar">
                     </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
+                    <h4>Dr. Soumik Sarkar</h4>
+                    <p class="faculty-title">Principal Investigator</p>
                     <p class="faculty-affiliation">Iowa State University</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">AI & Machine Learning, Cyber-Physical Systems</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-2.png" alt="Faculty Member">
+                        <img src="faculty-photo-2.png" alt="Dr. Nirav C. Merchant">
                     </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
+                    <h4>Dr. Nirav C. Merchant</h4>
+                    <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">University of Arizona</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Cyberinfrastructure, Data Science</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-3.png" alt="Faculty Member">
+                        <img src="faculty-photo-3.png" alt="Dr. Asheesh K. Singh">
                     </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
+                    <h4>Dr. Asheesh K. Singh</h4>
+                    <p class="faculty-title">Co-Principal Investigator</p>
+                    <p class="faculty-affiliation">Iowa State University</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Plant Science, Agronomy</p>
+                </div>
+                <div class="faculty-card">
+                    <div class="faculty-photo-placeholder">
+                        <img src="faculty-photo-4.png" alt="Dr. Christopher Stewart">
+                    </div>
+                    <h4>Dr. Christopher Stewart</h4>
+                    <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">Ohio State University</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Sustainable Computing, Systems</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-4.png" alt="Faculty Member">
+                        <img src="faculty-photo-5.png" alt="Dr. Hongwei Zhang">
                     </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
-                    <p class="faculty-affiliation">[University Affiliation]</p>
+                    <h4>Dr. Hongwei Zhang</h4>
+                    <p class="faculty-title">Co-Principal Investigator</p>
+                    <p class="faculty-affiliation">Iowa State University</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem; color: #666;">Wireless Communications, Networking</p>
                 </div>
-                <div class="faculty-card">
-                    <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-5.png" alt="Faculty Member">
-                    </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
-                    <p class="faculty-affiliation">[University Affiliation]</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Infrastructure Page -->
+    <div id="infrastructure" class="page">
+        <section>
+            <h2>Testbed Infrastructure</h2>
+            <div class="about-content">
+                <p style="font-size: 1.1rem; text-align: center;">AI-AgARENA integrates cutting-edge physical and cyber infrastructure across multiple sites, covering diverse crops, geographies, soils, and climates.</p>
+            </div>
+
+            <h3 style="text-align: center; color: var(--color-4); margin: 3rem 0 1rem;">Physical Infrastructure</h3>
+            
+            <div class="infrastructure-grid">
+                <div class="infrastructure-card">
+                    <h3>Iowa State Core Facility</h3>
+                    <p><strong>40+ acres</strong> of dedicated agricultural research farm with comprehensive capabilities:</p>
+                    <ul>
+                        <li>Major row crops with expansion to fruits and vegetables</li>
+                        <li>Advanced sensor networks for soil, plant, and weather monitoring</li>
+                        <li>Multiple drone types with various payload capacities</li>
+                        <li>Ground robots (Amiga) with 360° cameras</li>
+                        <li>Hyperspectral, thermal, and multispectral imaging</li>
+                        <li>440V power substation and solar hybrid systems</li>
+                        <li>5G connectivity through ARA wireless living lab</li>
+                        <li>On-site offices, classrooms, and sample processing workspace</li>
+                    </ul>
                 </div>
-                <div class="faculty-card">
-                    <div class="faculty-photo-placeholder">
-                        <img src="faculty-photo-6.png" alt="Faculty Member">
-                    </div>
-                    <h4>Dr. [Faculty Name]</h4>
-                    <p class="faculty-title">[Title/Position]</p>
-                    <p class="faculty-affiliation">[University Affiliation]</p>
+
+                <div class="infrastructure-card">
+                    <h3>ISU Digital Ag Innovation Lab</h3>
+                    <p>A globally unique living lab conducting production system research on <strong>1,000+ acres annually</strong>:</p>
+                    <ul>
+                        <li>High technology readiness level (TRL) testing facility</li>
+                        <li>35+ annual contracts with private industries</li>
+                        <li>90+ patents and technology transfer licenses</li>
+                        <li>60+ fully commercialized AgTech products</li>
+                        <li>Microcredential courses on vehicle systems, sensors, and automation</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>UA Field Scanner</h3>
+                    <p>World's largest and most advanced automated phenotyping system:</p>
+                    <ul>
+                        <li>30-ton robotic gantry system</li>
+                        <li>Generates 2-6 terabytes of data per day</li>
+                        <li>High-quality camera and sensor suite</li>
+                        <li>Open-source control software for custom sensor integration</li>
+                        <li>Measures ground cover, canopy height, plant geometry, growth stages</li>
+                        <li>Integrated with CyVerse for automated data transfers</li>
+                        <li>Dedicated full-time engineer for operations and maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>UA Yuma Farms</h3>
+                    <p><strong>500+ acres</strong> for diverse crop research:</p>
+                    <ul>
+                        <li>Valley Farm (274 acres): cotton, grains, vegetables</li>
+                        <li>Mesa Farm (240 acres): citrus production</li>
+                        <li>140-mile fiber network via Sun Corridor Network</li>
+                        <li>26 wireless towers enabling county-wide smart farming</li>
+                        <li>Edge computing with A100 GPUs</li>
+                        <li>Prime testing site for agricultural technologies</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>OSU Molly Caren Center</h3>
+                    <p><strong>2,100-acre facility</strong> for corn, soybeans, and wheat:</p>
+                    <ul>
+                        <li>Private 4G network (upgrading to 5G by Spring 2026)</li>
+                        <li>Download speeds: 150 Mbps, Latency: 60ms</li>
+                        <li>Support for vision-based autonomous vehicles and drones</li>
+                        <li>Focus on computational approaches for yield, resilience, sustainability</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; color: var(--color-4); margin: 3rem 0 1rem;">Cyberinfrastructure</h3>
+
+            <div class="infrastructure-grid">
+                <div class="infrastructure-card">
+                    <h3>ARA Wireless Living Lab</h3>
+                    <p>First-of-its-kind wireless connectivity for precision agriculture:</p>
+                    <ul>
+                        <li>Coverage: 60+ km diameter across ISU campus, Ames, and rural areas</li>
+                        <li>Low-UHF massive MIMO to mmWave wireless access</li>
+                        <li>Long-distance backhaul and free-space optical communications</li>
+                        <li>Low-earth-orbit (LEO) satellite communications</li>
+                        <li>Software-defined-radio (SDR) and programmable COTS platforms</li>
+                        <li>Open-source platforms: OpenAirInterface, srsRAN, SD-RAN</li>
+                        <li>Real-world deployment for agriculture robotics and applications</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>CyVerse Infrastructure</h3>
+                    <p>Integrated cyberinfrastructure for data-driven discovery:</p>
+                    <ul>
+                        <li>Federated data store for managing edge device and sensor data</li>
+                        <li>Kubernetes-based Discovery Environment with GPU support</li>
+                        <li>Data workbenches (Jupyter) and workflow managers (Argo, Nextflow)</li>
+                        <li>AI-VERDE: Metered API access to commercial and open-source LLMs</li>
+                        <li>Integration with NSF ACCESS resources (Jetstream2, Anvil-GPT)</li>
+                        <li>Support for MLOps and high-throughput data platforms</li>
+                        <li>Secure network virtualization via ZeroTier</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>Shared Software & Data Practices</h3>
+                    <p><strong>Software:</strong></p>
+                    <ul>
+                        <li>Infrastructure as Code (IaC): Terraform and Ansible templates</li>
+                        <li>ML/AI tools: MLFlow, Ray, DVC, Datachain</li>
+                        <li>Frameworks: PyTorch, JAX, TensorFlow</li>
+                        <li>CACAO platform for easy template management</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Data:</strong></p>
+                    <ul>
+                        <li>Croissant standard for machine-readable metadata</li>
+                        <li>Discoverable via Google Dataset Search</li>
+                        <li>FAIR and CARE standards compliance</li>
+                        <li>AR/VR visualization for immersive data exploration</li>
+                        <li>2+ petabytes of historical Field Scanner data</li>
+                    </ul>
+                </div>
+
+                <div class="infrastructure-card">
+                    <h3>Data & Model Governance</h3>
+                    <p>Comprehensive governance framework:</p>
+                    <ul>
+                        <li>Strict authentication and authorization enforcement</li>
+                        <li>Audit and tracking tools for data and model usage</li>
+                        <li>Enhanced tagging for improved data discovery</li>
+                        <li>Link validity checking and duplicate detection</li>
+                        <li>Data transformation tools (anonymization, compliance)</li>
+                        <li>Version control for datasets and trained models</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -638,23 +906,50 @@
     <!-- Research Page -->
     <div id="research" class="page">
         <section>
-            <h2>Research</h2>
+            <h2>AI Research Areas</h2>
+            <div class="about-content">
+                <p style="font-size: 1.1rem; text-align: center;">AI-AgARENA supports transformative research across major AI-Agriculture themes, continuously evolving to address new directions pursued by our research community.</p>
+            </div>
+            
             <div class="research-grid">
                 <div class="research-card">
-                    <h3>Multimodal Sensing & Data Fusion</h3>
-                    <p>Combining soil, plant, and weather data for smarter decisions.</p>
+                    <h3>Multi-modal Sensing & Data Fusion</h3>
+                    <p>Agricultural applications utilize heterogeneous sensing platforms including satellites, drones, ground robots, and sensor networks. AI-AgARENA enables researchers to advance multi-modal data fusion techniques, combining diverse data sources for comprehensive field analysis and decision-making.</p>
                 </div>
+
                 <div class="research-card">
-                    <h3>Digital Twins in Agriculture</h3>
-                    <p>Virtual models of farms for predictive analytics.</p>
+                    <h3>Agricultural Digital Twins</h3>
+                    <p>The testbed provides extensive 3D data along with Farmverse (AR/VR facilities) to conduct research in agricultural digital twins. These virtual farm models accelerate plant breeding, improve crop scouting, enhance agricultural education, and enable predictive analytics for farm management.</p>
                 </div>
+
                 <div class="research-card">
-                    <h3>Ag Robotics</h3>
-                    <p>Autonomous machines for precision farming.</p>
+                    <h3>Dynamic Decision-Making</h3>
+                    <p>AI-enabled modeling, reasoning, and precision management strategies are critical for climate-smart and sustainable farming. AI-AgARENA provides real-world use cases, comprehensive data, and validation opportunities to demonstrate the benefits of AI-based decision support systems for farmers.</p>
                 </div>
+
                 <div class="research-card">
-                    <h3>AI Foundation Models</h3>
-                    <p>Large-scale AI models tailored for agriculture.</p>
+                    <h3>In-field Robotics & Autonomy</h3>
+                    <p>Ground robots with heterogeneous manipulators and autonomous drones (for scouting and precision spraying) provide research opportunities in agricultural robotics. Outdoor agriculture presents challenging unstructured environments while offering comparatively lower-risk scenarios for testing AI-enabled cyber-physical systems.</p>
+                </div>
+
+                <div class="research-card">
+                    <h3>Multi-modal Swarm Management</h3>
+                    <p>Future cyber-agricultural systems require multiple autonomous vehicles to coordinate efficiently across 1,000+ acre fields. AI-AgARENA enables testing of emerging algorithms at scale, including multi-agent reinforcement learning and self-organizing systems that coordinate heterogeneous actors toward common goals.</p>
+                </div>
+
+                <div class="research-card">
+                    <h3>High-Expertise Foundation Models</h3>
+                    <p>AI-AgARENA enables detailed data collection at individual plant spatial granularity over extended periods (weeks to months). This fused, multimodal benchmark data supports development of Large Multimodal Models (LMMs) with deeper understanding of nuanced phenotypes and biological processes they induce.</p>
+                </div>
+
+                <div class="research-card">
+                    <h3>Cybersecurity for Ag Systems</h3>
+                    <p>Research into secure cyber-agricultural systems including formulating potential attack vectors for sensor-actuator networks, developing defense measures, characterizing system impacts of various attack types (data integrity, denial of service, timing attacks), and evaluating effectiveness of protection strategies.</p>
+                </div>
+
+                <div class="research-card">
+                    <h3>Wireless Communications</h3>
+                    <p>Exploring rural wireless research in real-world settings with programmable infrastructure ranging from low-UHF massive MIMO to mmWave access, studying behavior of wireless systems from agriculture robotics and application perspectives, and developing data-enabled AI/ML models for network optimization.</p>
                 </div>
             </div>
         </section>
@@ -664,11 +959,34 @@
     <div id="impact" class="page">
         <section>
             <div class="impact-section">
-                <h2>Impact</h2>
-                <p>Driving Sustainability and Food Security</p>
+                <h2>Impact & Broader Reach</h2>
+                <p>Driving Sustainability, Food Security, and Agricultural Innovation</p>
+                
                 <div class="impact-content">
-                    <p>AI-AgARENA supports climate-resilient farming practices and ensures equitable access to AI-driven technologies.</p>
-                    <p><strong>Education & Outreach:</strong> From K-12 workshops to VR-based Farmverse experiences, we're building the next-generation workforce.</p>
+                    <h3>Climate-Smart Agriculture</h3>
+                    <p>AI-AgARENA supports development of climate-resilient farming practices and ensures equitable access to AI-driven technologies. By providing a national testbed infrastructure, we enable research that directly addresses climate challenges facing modern agriculture while ensuring solutions are accessible to farmers of all scales.</p>
+
+                    <h3>Technology Demonstrations & Extension</h3>
+                    <p>The testbed facilitates guided demonstrations of climate-smart farming technologies for farmers, policymakers, and companies. These events are evaluated to demonstrate gains in learning and appreciation for scale-agnostic AI-Agriculture technologies, improving adoption, fairness, and equity across the agricultural sector.</p>
+
+                    <h3>Education & Workforce Development</h3>
+                    <p>AI-AgARENA's education spoke builds the future workforce through multiple pathways:</p>
+                    <ul class="impact-list">
+                        <li><strong>K-8 Programs:</strong> Hands-on experiential learning through workshops with local and regional youth programs including 4H, Girls in STEM, Boy Scouts, and Girl Scouts</li>
+                        <li><strong>High School Programs:</strong> Training workshops for secondary agricultural education instructors to highlight AI-AgARENA research and applications</li>
+                        <li><strong>College & University:</strong> Integrated coursework, research internships, and hands-on training in AI-Agriculture systems</li>
+                        <li><strong>Farmverse Learning:</strong> VR-based immersive experiences for agricultural education and training</li>
+                        <li><strong>Professional Development:</strong> Microcredential courses on vehicle systems, sensor & automation technology, and AgTech applications</li>
+                    </ul>
+
+                    <h3>Broadening Participation</h3>
+                    <p>Partnership with Women in Agriculture and AI (WIAA) at Iowa State University engages women researchers across undergraduate, graduate, post-doc, and faculty career stages, conducting activities for wider reach and representation in AI-Agriculture research and innovation.</p>
+
+                    <h3>Industry & Government Collaboration</h3>
+                    <p>AI-AgARENA works with AgTech companies (small startups to global corporations like John Deere, Bayer, Corteva), federal agencies (USDA, FAA, FCC, DoT), and follows NIST AI Safety Institute Consortium (AISIC) guidelines for safe and responsible AI development and deployment.</p>
+
+                    <h3>National AI Research Hub</h3>
+                    <p>Serving as a nexus for AI-Agriculture innovation, connecting researchers, industry partners, technology builders, and policymakers to accelerate development and deployment of sustainable agricultural technologies. The testbed democratizes access to real-scale agricultural infrastructure for AI researchers who typically lack access to such facilities.</p>
                 </div>
             </div>
         </section>
@@ -677,20 +995,46 @@
     <!-- Get Involved Page -->
     <div id="get-involved" class="page">
         <section>
-            <h2>Get Involved</h2>
+            <h2>Get Involved with AI-AgARENA</h2>
+            <div class="about-content">
+                <p style="font-size: 1.1rem; text-align: center;">Join our growing community of researchers, students, industry partners, and stakeholders shaping the future of AI-driven agriculture.</p>
+            </div>
+            
             <div class="involvement-grid">
                 <div class="involvement-card">
-                    <h3>Researchers</h3>
-                    <p>Access our testbed for your AI projects.</p>
+                    <h3>AI Researchers</h3>
+                    <p>Access our multi-site testbed for developing and validating AI algorithms and tools. Leverage state-of-the-art sensing platforms, robotics, and data infrastructure for your research projects. Join our network of guest researchers beta-testing cutting-edge agricultural AI applications.</p>
                 </div>
+
                 <div class="involvement-card">
-                    <h3>Students</h3>
-                    <p>Join internships, coursework, and VR learning.</p>
+                    <h3>Agricultural Scientists</h3>
+                    <p>Collaborate on research integrating domain expertise with advanced AI capabilities. Access comprehensive data collection, analysis tools, and visualization platforms to advance plant breeding, crop management, and sustainable farming practices.</p>
                 </div>
+
                 <div class="involvement-card">
-                    <h3>Industry & Government</h3>
-                    <p>Partner with us to shape the future of agriculture.</p>
+                    <h3>Students & Educators</h3>
+                    <p>Participate in internships, coursework, and hands-on training programs. Engage with Farmverse VR learning experiences. Access educational resources and workshops spanning K-12 through graduate levels, building skills for the future agricultural workforce.</p>
                 </div>
+
+                <div class="involvement-card">
+                    <h3>Industry Partners</h3>
+                    <p>Collaborate on technology development, testing, and commercialization. Access facilities for product validation and stakeholder demonstrations. Partner on research projects ranging from prototypes to high-TRL commercial applications in AgTech innovation.</p>
+                </div>
+
+                <div class="involvement-card">
+                    <h3>Farmers & Extension</h3>
+                    <p>Participate in guided demonstrations of climate-smart farming technologies. Provide feedback on practical applications and real-world needs. Engage in extension programs designed to improve adoption of AI-driven agricultural practices.</p>
+                </div>
+
+                <div class="involvement-card">
+                    <h3>Government & Policy</h3>
+                    <p>Partner with us to ensure AI-AgARENA provides valuable tools for the farming community while maintaining data privacy and security. Collaborate on developing safe AI research practices and guidelines for agricultural technology deployment.</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>Planning Workshops & Community Engagement</h3>
+                <p>We regularly organize workshops, seminars, and webinars to engage the broader AI and agricultural communities. Join our mailing list and participate in upcoming events to help shape the future of AI-AgARENA and contribute your expertise to this national effort.</p>
             </div>
         </section>
     </div>
@@ -700,13 +1044,45 @@
         <section>
             <h2>News & Events</h2>
             <div class="news-grid">
-                <div class="news-item">
-                    <h3>Upcoming Webinar: "AI in Agriculture: Opportunities and Challenges"</h3>
-                    <p>Register Now!</p>
+                <div class="news-item news-featured">
+                    <h3>🌟 AI-AgARENA Testbed Planning Workshop</h3>
+                    <p>Thank you for your interest in our upcoming AI-AgARENA Testbed Planning Workshop at Iowa State University. This event will bring together researchers, industry partners, and technology builders to shape the future of AI-driven agricultural innovation.</p>
+                    
+                    <h4>Event Details</h4>
+                    <p><strong>Date:</strong> Friday, November 7, 2025</p>
+                    <p><strong>Time:</strong> 8:30 AM – 4:30 PM</p>
+                    <p><strong>Location:</strong> Iowa State University, Ames, IA</p>
+                    <p><strong>Nearest Airport:</strong> Des Moines International Airport (DSM), Des Moines, IA</p>
+                    
+                    <h4>Workshop Highlights</h4>
+                    <ul>
+                        <li><strong>Welcome & Keynote:</strong> Opening remarks by Dr. Soumik Sarkar and a presentation from Rick van de Zedde (Wageningen University & Research, Netherlands).</li>
+                        <li><strong>Use-Case Breakouts:</strong> Explore themes such as Algorithms, Hardware, Networking/Wireless, and Agricultural Applications. Share challenges and use cases to guide testbed development.</li>
+                        <li><strong>Collaborative Planning:</strong> Work together to identify impactful ideas, discuss infrastructure needs, and plan next steps for the AI-AgARENA testbed.</li>
+                        <li><strong>Networking & Lunch:</strong> Engage in discussions on financial planning and builder contributions.</li>
+                        <li><strong>Closing Session:</strong> Website launch and roadmap for continued involvement.</li>
+                    </ul>
+                    
+                    <p>This workshop is an opportunity to influence the design and capabilities of a cutting-edge agricultural AI testbed and we greatly appreciate your participation. Your insights will help ensure the platform meets real-world needs and accelerates innovation.</p>
+                    
+                    <p style="background: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;"><strong>📋 Important:</strong> Please let us know about your dietary and accommodation needs by completing the registration form by <strong>Friday, October 31, 2025</strong>.</p>
+                    
+                    <p style="margin-top: 1rem;"><em>We look forward to your participation in shaping the future of AI in agriculture!</em></p>
                 </div>
+                
                 <div class="news-item">
-                    <h3>Recent Workshop</h3>
-                    <p>Highlights from our AI-AgARENA planning sessions.</p>
+                    <h3>Machine Learning for Cyber-Agricultural Systems (MLCAS) Workshop Series</h3>
+                    <p>AI-AgARENA builds on seven years of community building through the International Workshop Series on Machine Learning for Cyber-Agricultural Systems. Join our network to stay informed about upcoming MLCAS events and AI-Agriculture research opportunities.</p>
+                </div>
+
+                <div class="news-item">
+                    <h3>Community Engagement: Surveys & Webinars</h3>
+                    <p>We regularly conduct surveys and host webinars to engage guest AI researchers, understand community needs, identify potential use cases, and demonstrate AI-AgARENA capabilities. Participate to help shape testbed development and capabilities.</p>
+                </div>
+
+                <div class="news-item">
+                    <h3>AI Institutes Virtual Organization & SAIL</h3>
+                    <p>AI-AgARENA actively participates in the AI Institutes Virtual Organization (AIVO) and Summit for AI Institutes Leadership (SAIL) conferences, disseminating testbed information and fostering collaborations across the national AI research community.</p>
                 </div>
             </div>
         </section>
@@ -716,17 +1092,44 @@
     <div id="resources" class="page">
         <section>
             <h2>Resources</h2>
+            <div class="about-content">
+                <p style="font-size: 1.1rem; text-align: center;">Access datasets, publications, software tools, and educational materials developed through AI-AgARENA</p>
+            </div>
+            
             <div class="resources-list">
                 <div class="resource-item">
-                    <h3>Publications</h3>
+                    <h3>📚 Publications</h3>
+                    <p>Peer-reviewed research papers and technical reports from AI-AgARENA projects</p>
                 </div>
                 <div class="resource-item">
-                    <h3>Data Access</h3>
-                    <p>(coming soon)</p>
+                    <h3>💾 Data Repository</h3>
+                    <p>Access to agricultural datasets with Croissant metadata standard</p>
+                    <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
                 </div>
                 <div class="resource-item">
-                    <h3>Educational Materials</h3>
+                    <h3>🛠️ Software Tools</h3>
+                    <p>Open-source code, ML/AI templates, and workflow tools</p>
+                    <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
                 </div>
+                <div class="resource-item">
+                    <h3>📖 Educational Materials</h3>
+                    <p>Training modules, tutorials, and learning resources for AI-Agriculture</p>
+                </div>
+                <div class="resource-item">
+                    <h3>🎓 Documentation</h3>
+                    <p>Technical documentation, user guides, and best practices</p>
+                    <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
+                </div>
+                <div class="resource-item">
+                    <h3>🔬 Demo Projects</h3>
+                    <p>Example use cases and demonstration projects showcasing testbed capabilities</p>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>Data Access & Cyberinfrastructure</h3>
+                <p>AI-AgARENA data is managed through CyVerse infrastructure, providing secure access, reproducible workflows, and integration with major computational resources. Data follows FAIR and CARE standards with Croissant metadata for discoverability.</p>
+                <p style="margin-top: 1rem;">Access to historical Field Scanner data (2+ petabytes), real-time sensor streams, and processed datasets is available to registered users through the CyVerse Discovery Environment.</p>
             </div>
         </section>
     </div>
@@ -734,11 +1137,34 @@
     <!-- Contact Page -->
     <div id="contact" class="page">
         <section>
-            <h2>Contact</h2>
+            <h2>Contact Us</h2>
             <div class="contact-info">
                 <h3>Have questions or want to collaborate?</h3>
-                <p><strong>Email:</strong> info@ai-agarena.org</p>
-                <p><strong>Address:</strong> Iowa State University, Ames, IA</p>
+                <p style="margin-top: 2rem;"><strong>Email:</strong> info@ai-agarena.org</p>
+                <p><strong>Location:</strong> Iowa State University, Ames, IA 50011</p>
+                
+                <h3 style="margin-top: 3rem;">Project Leadership</h3>
+                <p><strong>Principal Investigator:</strong> Dr. Soumik Sarkar</p>
+                <p style="font-size: 0.95rem; margin-top: 0.5rem;">Iowa State University</p>
+                
+                <p style="margin-top: 2rem;"><strong>Co-Principal Investigators:</strong></p>
+                <p style="font-size: 0.95rem;">Dr. Nirav C. Merchant (University of Arizona)</p>
+                <p style="font-size: 0.95rem;">Dr. Asheesh K. Singh (Iowa State University)</p>
+                <p style="font-size: 0.95rem;">Dr. Christopher Stewart (Ohio State University)</p>
+                <p style="font-size: 0.95rem;">Dr. Hongwei Zhang (Iowa State University)</p>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 3rem;">
+                <h3>Site Locations</h3>
+                <p><strong>Iowa State University Core Facility</strong><br>
+                Ames, IA - Primary testbed site with 40+ acres</p>
+                
+                <p style="margin-top: 1rem;"><strong>University of Arizona</strong><br>
+                Tucson, AZ - Field Scanner facility<br>
+                Yuma, AZ - 500+ acre farm sites</p>
+                
+                <p style="margin-top: 1rem;"><strong>Ohio State University</strong><br>
+                Molly Caren Agricultural Center - 2,100 acres</p>
             </div>
         </section>
     </div>
@@ -747,6 +1173,7 @@
     <footer>
         <p>&copy; 2025 AI-AgARENA. All rights reserved.</p>
         <p>Advancing AI for Climate-Smart Agriculture</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">A National Science Foundation Planning Grant Project</p>
     </footer>
 
     <script>
@@ -756,17 +1183,14 @@
         }
 
         function navigateTo(pageId) {
-            // Hide all pages
             const pages = document.querySelectorAll('.page');
             pages.forEach(page => page.classList.remove('active'));
             
-            // Show selected page
             const selectedPage = document.getElementById(pageId);
             if (selectedPage) {
                 selectedPage.classList.add('active');
             }
             
-            // Update active nav link
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => link.classList.remove('active'));
             const activeLink = document.querySelector(`[data-page="${pageId}"]`);
@@ -774,14 +1198,10 @@
                 activeLink.classList.add('active');
             }
             
-            // Scroll to top
             window.scrollTo(0, 0);
-            
-            // Close mobile menu
             document.getElementById('navLinks').classList.remove('active');
         }
 
-        // Set home as active on load
         window.addEventListener('load', () => {
             navigateTo('home');
         });
