@@ -218,9 +218,27 @@
         /* Infrastructure Section */
         .infrastructure-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(5, 1fr);
             gap: 2rem;
             margin-top: 2rem;
+        }
+        
+        @media (max-width: 1400px) {
+            .infrastructure-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .infrastructure-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .infrastructure-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .infrastructure-card {
@@ -240,16 +258,29 @@
         .infrastructure-card h3 {
             color: var(--color-4);
             margin-bottom: 1rem;
-            font-size: 1.4rem;
+            font-size: 1.2rem;
+        }
+
+        .infrastructure-card p {
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
         }
 
         .infrastructure-card ul {
-            margin-left: 1.5rem;
+            list-style: none;
+            margin-left: 0;
             margin-top: 1rem;
+            padding-left: 0;
         }
 
         .infrastructure-card li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+            padding-left: 0;
+        }
+
+        .infrastructure-card li:before {
+            content: '';
         }
 
         /* Research Cards */
@@ -687,11 +718,16 @@
         <section>
             <h2>What is AI-AgARENA?</h2>
             <div class="about-content">
-                <p>AI-AgARENA (AI-ready Cyber-Agricultural Systems Testbed) is a groundbreaking multi-state, multi-site platform designed to accelerate AI research for climate-smart agriculture. This living laboratory integrates autonomous farm management, continuous real-time sensing of soil and plant conditions, weather monitoring, and intelligent data harvesting for analysis and visualization.</p>
+                <p><strong>'AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)'</strong> seeks to develop an <strong>AI-ready cyber-agricultural system</strong> that enables <strong>AI research for climate-smart agriculture</strong> by integrating <strong>autonomous farm management</strong>, <strong>continuous real-time sensing of soil and plant conditions and weather parameters</strong>, and <strong>intelligent data harvesting for analysis and visualization</strong>. AI-AgARENA is a <strong>multi-state, multi-site AI-ready farming testbed</strong> that integrates and enhances existing agricultural research platforms—complemented with <strong>wireless networking, sensors, ground robots, and drones</strong>—to develop and validate <strong>AI tools for cyber-agricultural systems</strong>.</p>
                 
-                <p>Our testbed brings together existing agricultural research platforms at Iowa State University, University of Arizona, and Ohio State University, enhanced with advanced wireless networking, sensors, ground robots, and drones. This comprehensive infrastructure enables researchers to develop and validate AI tools for cyber-agricultural systems at scale.</p>
-                
-                <p>AI-AgARENA serves as a national AI-Agriculture research hub, stimulating collaborations within an innovation ecosystem to improve sustainable farming practices, increase climate resiliency, and ensure food security. The testbed enables AI-Agriculture technology demonstrations through at-scale implementation for private-public-producer organizations and serves as a venue for stakeholder education across public, private, NGO, and governmental agencies.</p>
+                <p>The mission is to <strong>serve as a national AI-Ag research hub</strong> that stimulates collaborations within an <strong>innovation ecosystem</strong> to improve <strong>sustainable farming practices, increase climate resiliency, and ensure food security</strong>. To achieve this, key technological innovations include the <strong>adaptation of AI-driven sensing, modeling, and actuation</strong> through <strong>autonomy algorithms, robotic systems, and scalable cyberinfrastructure</strong>. The testbed will enable <strong>AI-Ag technology demonstrations</strong> through at-scale implementations of science and serve as a <strong>venue for stakeholder education</strong> across public, private, NGO, and governmental organizations—advancing the future of <strong>climate-smart, data-driven, and sustainable agriculture</strong>.</p>
+            </div>
+
+            <div style="text-align: center; margin: 3rem 0;">
+                <img src="AI-AgARENA-diagram.png" alt="AI-AgARENA Planning Diagram" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <p style="margin-top: 1rem; font-style: italic; color: #666; line-height: 1.6;">
+                    <strong>Figure 1:</strong> Planning AI-AgARENA, a testbed for development and validation of AI tools for climate-smart agriculture research, education, and extension/outreach. The testbed will be an integration of Ag research core facilities and infrastructure at Iowa State with satellite testbeds at U Arizona and Ohio State, covering diverse crops, geographies, soil and climate. Planning project participants include domain experts, testbed infrastructure designers and builders, demo project researchers, and a network of guest AI researchers and industry partners for beta testing and feedback.
+                </p>
             </div>
 
             <div class="highlight-box">
@@ -1088,7 +1124,7 @@
             <h2>News & Events</h2>
             <div class="news-grid">
                 <div class="news-item news-featured">
-                    <h3>🌟 AI-AgARENA Testbed Planning Workshop</h3>
+                    <h3>AI-AgARENA Testbed Planning Workshop</h3>
                     <p>Thank you for your interest in our upcoming AI-AgARENA Testbed Planning Workshop at Iowa State University. This event will bring together researchers, industry partners, and technology builders to shape the future of AI-driven agricultural innovation.</p>
                     
                     <h4>Event Details</h4>
@@ -1108,7 +1144,7 @@
                     
                     <p>This workshop is an opportunity to influence the design and capabilities of a cutting-edge agricultural AI testbed and we greatly appreciate your participation. Your insights will help ensure the platform meets real-world needs and accelerates innovation.</p>
                     
-                    <p style="background: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;"><strong>📋 Important:</strong> Please let us know about your dietary and accommodation needs by completing the registration form by <strong>Friday, October 31, 2025</strong>.</p>
+                    <p style="background: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;"><strong>Important:</strong> Please let us know about your dietary and accommodation needs by completing the registration form by <strong>Friday, October 31, 2025</strong>.</p>
                     
                     <p style="margin-top: 1rem;"><em>We look forward to your participation in shaping the future of AI in agriculture!</em></p>
                 </div>
@@ -1141,30 +1177,30 @@
             
             <div class="resources-list">
                 <div class="resource-item">
-                    <h3>📚 Publications</h3>
+                    <h3>Publications</h3>
                     <p>Peer-reviewed research papers and technical reports from AI-AgARENA projects</p>
                 </div>
                 <div class="resource-item">
-                    <h3>💾 Data Repository</h3>
+                    <h3>Data Repository</h3>
                     <p>Access to agricultural datasets with Croissant metadata standard</p>
                     <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
                 </div>
                 <div class="resource-item">
-                    <h3>🛠️ Software Tools</h3>
+                    <h3>Software Tools</h3>
                     <p>Open-source code, ML/AI templates, and workflow tools</p>
                     <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
                 </div>
                 <div class="resource-item">
-                    <h3>📖 Educational Materials</h3>
+                    <h3>Educational Materials</h3>
                     <p>Training modules, tutorials, and learning resources for AI-Agriculture</p>
                 </div>
                 <div class="resource-item">
-                    <h3>🎓 Documentation</h3>
+                    <h3>Documentation</h3>
                     <p>Technical documentation, user guides, and best practices</p>
                     <p style="margin-top: 0.5rem;"><em>(coming soon)</em></p>
                 </div>
                 <div class="resource-item">
-                    <h3>🔬 Demo Projects</h3>
+                    <h3>Demo Projects</h3>
                     <p>Example use cases and demonstration projects showcasing testbed capabilities</p>
                 </div>
             </div>
@@ -1214,9 +1250,14 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 AI-AgARENA. All rights reserved.</p>
-        <p>Advancing AI for Climate-Smart Agriculture</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">A National Science Foundation Planning Grant Project</p>
+        <div style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                <img src="nsf-logo.png" alt="National Science Foundation" style="height: 80px; width: auto;">
+            </div>
+            <p>&copy; 2025 AI-AgARENA. All rights reserved.</p>
+            <p>Advancing AI for Climate-Smart Agriculture</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">A National Science Foundation Planning Grant Project</p>
+        </div>
     </footer>
 
     <script>
