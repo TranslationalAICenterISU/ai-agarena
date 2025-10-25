@@ -87,6 +87,7 @@
         .page {
             display: none;
             flex: 1;
+            width: 100%;
         }
 
         .page.active {
@@ -1003,19 +1004,34 @@
         }
 
         function navigateTo(pageId) {
+            // Hide all pages first
             const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
+            pages.forEach(page => {
+                page.classList.remove('active');
+                page.style.display = 'none';
+            });
             
+            // Show selected page
             const selectedPage = document.getElementById(pageId);
             if (selectedPage) {
+                selectedPage.style.display = 'block';
                 selectedPage.classList.add('active');
             }
             
+            // Update desktop nav active state
             const navLinks = document.querySelectorAll('.nav-links a');
             navLinks.forEach(link => link.classList.remove('active'));
             const activeLink = document.querySelector(`.nav-links [data-page="${pageId}"]`);
             if (activeLink) {
                 activeLink.classList.add('active');
+            }
+            
+            // Update mobile nav active state
+            const mobileLinks = document.querySelectorAll('.mobile-nav-links a');
+            mobileLinks.forEach(link => link.classList.remove('active'));
+            const activeMobileLink = document.querySelector(`.mobile-nav-links [data-page="${pageId}"]`);
+            if (activeMobileLink) {
+                activeMobileLink.classList.add('active');
             }
             
             window.scrollTo(0, 0);
