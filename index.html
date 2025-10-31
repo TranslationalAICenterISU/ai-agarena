@@ -687,14 +687,16 @@
   margin: 2rem 0;
   overflow: hidden;
   perspective: 1000px;
-  transition: all 0.8s ease;
 }
 
-/* IMAGE */
+/* Image container collapses smoothly */
 .image-container {
-  transition: all 1s ease;
+  max-height: 500px; /* same as image height */
+  overflow: hidden;
+  transition: max-height 1s ease;
 }
 
+/* Image rolls away */
 .roll-image {
   max-width: 100%;
   height: auto;
@@ -704,27 +706,27 @@
   transform-origin: bottom center;
 }
 
-/* TEXT */
+/* Text transition */
 .about-content {
   transition: transform 1s ease, opacity 1s ease;
 }
 
-/* HOVER EFFECT */
+/* Hover effect */
 .ai-agarena-section:hover .roll-image {
   transform: rotateX(90deg) translateY(-50px);
   opacity: 0;
 }
 
+/* Collapse image space */
 .ai-agarena-section:hover .image-container {
-  margin-bottom: -200px; /* collapses space as image disappears */
+  max-height: 0;
 }
 
+/* Move text up smoothly */
 .ai-agarena-section:hover .about-content {
-  transform: translateY(-100px);
-  opacity: 1;
+  transform: translateY(-40px);
 }
 </style>
-
 
 
     </div>
