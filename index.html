@@ -644,11 +644,12 @@
         
     <section>
  <section>
+  <section class="ai-agarena-section">
   <div class="image-container">
     <img 
       src="AI-AgARENA Overview.svg" 
       alt="AI-AgARENA Planning Diagram" 
-      class="roll-up">
+      class="roll-image">
   </div>
 
   <div class="about-content">
@@ -681,32 +682,49 @@
 </section>
 
 <style>
-.image-container {
+.ai-agarena-section {
   text-align: center;
   margin: 2rem 0;
+  overflow: hidden;
   perspective: 1000px;
-  position: relative;
-  height: 400px; /* Keeps space even when image rolls up */
+  transition: all 0.8s ease;
 }
 
-.roll-up {
+/* IMAGE */
+.image-container {
+  transition: all 1s ease;
+}
+
+.roll-image {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 1s ease, opacity 1s ease;
   transform-origin: bottom center;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
 }
 
-.roll-up:hover {
-  transform: translateX(-50%) rotateX(90deg) translateY(-50px);
+/* TEXT */
+.about-content {
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+/* HOVER EFFECT */
+.ai-agarena-section:hover .roll-image {
+  transform: rotateX(90deg) translateY(-50px);
   opacity: 0;
 }
+
+.ai-agarena-section:hover .image-container {
+  margin-bottom: -200px; /* collapses space as image disappears */
+}
+
+.ai-agarena-section:hover .about-content {
+  transform: translateY(-100px);
+  opacity: 1;
+}
 </style>
+
 
 
     </div>
