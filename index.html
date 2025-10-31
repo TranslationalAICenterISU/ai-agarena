@@ -265,6 +265,7 @@
             color: var(--color-4);
             margin-bottom: 0.8rem;
             font-size: 1.1rem;
+            text-align: center;
         }
 
         .infrastructure-card p {
@@ -279,7 +280,6 @@
             margin-left: 0;
             margin-top: 0.8rem;
             padding-left: 0;
-            text-align: center;
         }
 
         .infrastructure-card li {
@@ -319,6 +319,7 @@
             margin-bottom: 0.8rem;
             color: var(--color-8);
             font-size: 1.2rem;
+            text-align: center;
         }
 
         .involvement-card p {
@@ -564,8 +565,6 @@
 
         .image-wrapper {
             width: 100%;
-            overflow: hidden;
-            transition: height 0.8s ease, opacity 0.8s ease;
             position: relative;
             margin-bottom: 2rem;
             display: flex;
@@ -579,34 +578,13 @@
             max-width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.8s ease, opacity 0.8s ease;
-            transform-origin: bottom center;
         }
 
         .ai-agarena-section .about-content {
             padding: 2rem;
-            transition: margin-top 0.8s ease;
             position: relative;
             z-index: 1;
             text-align: left;
-        }
-
-margin-bottom: 0;
-        }
-
-        .image-wrapper:hover .roll-image {
-            transform: translateY(-100%) rotateX(90deg);
-            opacity: 0;
-        }
-
-        .image-wrapper:hover {
-            height: 0;
-            opacity: 0;
-            margin-bottom: 0;
-        }
-
-        .ai-agarena-section:has(.image-wrapper:hover) .about-content {
-            margin-top: -1rem;
         }
 
         @media (max-width: 768px) {
