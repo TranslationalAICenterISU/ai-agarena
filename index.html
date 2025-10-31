@@ -587,18 +587,21 @@
             text-align: left;
         }
 
-        .ai-agarena-section:hover .roll-image {
+margin-bottom: 0;
+        }
+
+        .image-wrapper:hover .roll-image {
             transform: translateY(-100%) rotateX(90deg);
             opacity: 0;
         }
 
-        .ai-agarena-section:hover .image-wrapper {
+        .image-wrapper:hover {
             height: 0;
             opacity: 0;
             margin-bottom: 0;
         }
 
-        .ai-agarena-section:hover .about-content {
+        .ai-agarena-section:has(.image-wrapper:hover) .about-content {
             margin-top: -1rem;
         }
 
