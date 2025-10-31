@@ -653,9 +653,9 @@
   </div>
 
   <div class="about-content">
-    <p><strong>'AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)'</strong> seeks to develop an <strong>AI-ready cyber-agricultural system</strong> that enables <strong>AI research for climate-smart agriculture</strong> by integrating <strong>autonomous farm management</strong>, <strong>continuous real-time sensing of soil and plant conditions and weather parameters</strong>, and <strong>intelligent data harvesting for analysis and visualization</strong>. AI-AgARENA is a <strong>multi-state, multi-site AI-ready farming testbed</strong> that integrates and enhances existing agricultural research platforms—complemented with <strong>wireless networking, sensors, ground robots, and drones</strong>—to develop and validate <strong>AI tools for cyber-agricultural systems</strong>.</p>
+    <p><strong>AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)</strong> seeks to develop an AI-ready cyber-agricultural system that enables AI research for climate-smart agriculture by integrating autonomous farm management, continuous real-time sensing of soil and plant conditions and weather parameters, and intelligent data harvesting for analysis and visualization. AI-AgARENA is a multi-state, multi-site AI-ready farming testbed that integrates and enhances existing agricultural research platforms—complemented with wireless networking, sensors, ground robots, and drones—to develop and validate AI tools for cyber-agricultural systems.</p>
     
-    <p>The mission is to <strong>serve as a national AI-Ag research hub</strong> that stimulates collaborations within an <strong>innovation ecosystem</strong> to improve <strong>sustainable farming practices, increase climate resiliency, and ensure food security</strong>. To achieve this, key technological innovations include the <strong>adaptation of AI-driven sensing, modeling, and actuation</strong> through <strong>autonomy algorithms, robotic systems, and scalable cyberinfrastructure</strong>. The testbed will enable <strong>AI-Ag technology demonstrations</strong> through at-scale implementations of science and serve as a <strong>venue for stakeholder education</strong> across public, private, NGO, and governmental organizations—advancing the future of <strong>climate-smart, data-driven, and sustainable agriculture</strong>.</p>
+    <p>The mission is to serve as a national AI-Ag research hub that stimulates collaborations within an innovation ecosystem to improve sustainable farming practices, increase climate resiliency, and ensure food security. To achieve this, key technological innovations include the adaptation of AI-driven sensing, modeling, and actuation through autonomy algorithms, robotic systems, and scalable cyberinfrastructure. The testbed will enable AI-Ag technology demonstrations through at-scale implementations of science and serve as a venue for stakeholder education across public, private, NGO, and governmental organizations—advancing the future of climate-smart, data-driven, and sustainable agriculture.</p>
   </div>
 
   <h2 style="margin-top: 2rem;">Partner Institutions</h2>
@@ -689,44 +689,46 @@
   perspective: 1000px;
 }
 
-/* Image container collapses smoothly */
+/* Image container */
 .image-container {
-  max-height: 500px; /* same as image height */
+  max-height: 500px;
   overflow: hidden;
-  transition: max-height 1s ease;
+  transition: max-height 1s ease 0s; /* collapse starts after image fades */
 }
 
-/* Image rolls away */
+/* Image */
 .roll-image {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 0.8s ease, opacity 0.8s ease;
   transform-origin: bottom center;
 }
 
-/* Text transition */
+/* Text */
 .about-content {
-  transition: transform 1s ease, opacity 1s ease;
+  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
+  /* delay ensures text moves only after image disappears */
 }
 
-/* Hover effect */
+/* Hover animation */
 .ai-agarena-section:hover .roll-image {
   transform: rotateX(90deg) translateY(-50px);
   opacity: 0;
 }
 
-/* Collapse image space */
 .ai-agarena-section:hover .image-container {
   max-height: 0;
+  transition-delay: 0.8s; /* collapse happens after image fade */
 }
 
-/* Move text up smoothly */
 .ai-agarena-section:hover .about-content {
-  transform: translateY(-40px);
+  transform: translateY(-60px);
+  opacity: 1;
 }
 </style>
+
 
 
     </div>
@@ -756,7 +758,7 @@
             <div class="faculty-grid">
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="ss.png" alt="Dr. Soumik Sarkar">
+                        <img src="ss.jpg" alt="Dr. Soumik Sarkar">
                     </div>
                     <h4>Dr. Soumik Sarkar</h4>
                     <p class="faculty-title">Principal Investigator</p>
