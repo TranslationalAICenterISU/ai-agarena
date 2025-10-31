@@ -611,6 +611,58 @@
         #home .partners-grid {
             margin-top: 1rem;
         }
+
+        /* AI-AgARENA Section Styles */
+        .ai-agarena-section {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 0 2rem;
+        }
+
+        /* Image wrapper: manages the space and animation */
+        .image-wrapper {
+            height: 400px;
+            overflow: hidden;
+            transition: height 0.8s ease, opacity 0.8s ease;
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        /* Image itself */
+        .roll-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.8s ease, opacity 0.8s ease;
+            transform-origin: bottom center;
+        }
+
+        /* Text starts below image */
+        .ai-agarena-section .about-content {
+            padding: 1rem 2rem;
+            transition: margin-top 0.8s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Hover effect */
+        .ai-agarena-section:hover .roll-image {
+            transform: translateY(-100%) rotateX(90deg);
+            opacity: 0;
+        }
+
+        .ai-agarena-section:hover .image-wrapper {
+            height: 0;
+            opacity: 0;
+            margin-bottom: 0;
+        }
+
+        .ai-agarena-section:hover .about-content {
+            margin-top: -1rem;
+        }
     </style>
 </head>
 <body>
@@ -642,71 +694,40 @@
             </div>
         </section>
         
-    <section>
- <section>
-<section class="ai-agarena-section">
-  <div class="image-wrapper">
-    <img src="AI-AgARENA Overview.svg" alt="AI-AgARENA Planning Diagram" class="roll-image">
-  </div>
+            <section class="ai-agarena-section">
+                <div class="image-wrapper">
+                    <img src="AI-AgARENA Overview.svg" alt="AI-AgARENA Planning Diagram" class="roll-image">
+                </div>
 
-  <div class="about-content">
-    <p><strong>AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)</strong> seeks to develop an AI-ready cyber-agricultural system that enables AI research for climate-smart agriculture by integrating autonomous farm management, continuous real-time sensing of soil and plant conditions and weather parameters, and intelligent data harvesting for analysis and visualization. AI-AgARENA is a multi-state, multi-site AI-ready farming testbed that integrates and enhances existing agricultural research platforms—complemented with wireless networking, sensors, ground robots, and drones—to develop and validate AI tools for cyber-agricultural systems.</p>
-    
-    <p>The mission is to serve as a national AI-Ag research hub that stimulates collaborations within an innovation ecosystem to improve sustainable farming practices, increase climate resiliency, and ensure food security. To achieve this, key technological innovations include the adaptation of AI-driven sensing, modeling, and actuation through autonomy algorithms, robotic systems, and scalable cyberinfrastructure. The testbed will enable AI-Ag technology demonstrations through at-scale implementations of science and serve as a venue for stakeholder education across public, private, NGO, and governmental organizations—advancing the future of climate-smart, data-driven, and sustainable agriculture.</p>
-  </div>
-</section>
-
-<style>
-.ai-agarena-section {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  margin: 2rem 0;
-}
-
-/* Image wrapper: manages the space and animation */
-.image-wrapper {
-  height: 400px;
-  overflow: hidden;
-  transition: height 0.8s ease, opacity 0.8s ease;
-  position: relative;
-}
-
-/* Image itself */
-.roll-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  transform-origin: bottom center;
-}
-
-/* Text starts below image */
-.about-content {
-  padding: 1rem 2rem;
-  transition: margin-top 0.8s ease;
-}
-
-/* Hover effect */
-.ai-agarena-section:hover .roll-image {
-  transform: translateY(-100%) rotateX(90deg);
-  opacity: 0;
-}
-
-.ai-agarena-section:hover .image-wrapper {
-  height: 0;
-  opacity: 0;
-}
-
-.ai-agarena-section:hover .about-content {
-  margin-top: -1rem; /* smoothly fills the gap, no overlap */
-}
-</style>
-
-
-
-
+                <div class="about-content">
+                    <p><strong>'AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)'</strong> seeks to develop an <strong>AI-ready cyber-agricultural system</strong> that enables <strong>AI research for climate-smart agriculture</strong> by integrating <strong>autonomous farm management</strong>, <strong>continuous real-time sensing of soil and plant conditions and weather parameters</strong>, and <strong>intelligent data harvesting for analysis and visualization</strong>. AI-AgARENA is a <strong>multi-state, multi-site AI-ready farming testbed</strong> that integrates and enhances existing agricultural research platforms—complemented with <strong>wireless networking, sensors, ground robots, and drones</strong>—to develop and validate <strong>AI tools for cyber-agricultural systems</strong>.</p>
+                    
+                    <p>The mission is to <strong>serve as a national AI-Ag research hub</strong> that stimulates collaborations within an <strong>innovation ecosystem</strong> to improve <strong>sustainable farming practices, increase climate resiliency, and ensure food security</strong>. To achieve this, key technological innovations include the <strong>adaptation of AI-driven sensing, modeling, and actuation</strong> through <strong>autonomy algorithms, robotic systems, and scalable cyberinfrastructure</strong>. The testbed will enable <strong>AI-Ag technology demonstrations</strong> through at-scale implementations of science and serve as a <strong>venue for stakeholder education</strong> across public, private, NGO, and governmental organizations—advancing the future of <strong>climate-smart, data-driven, and sustainable agriculture</strong>.</p>
+                </div>
+            </section>
+            
+            <h2 style="margin-top: 2rem;">Partner Institutions</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="isu.png" alt="Iowa State University Logo">
+                    </div>
+                    <h3>Iowa State University</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="UA.png" alt="University of Arizona Logo">
+                    </div>
+                    <h3>University of Arizona</h3>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-logo-placeholder">
+                        <img src="OSU.png" alt="Ohio State University Logo">
+                    </div>
+                    <h3>Ohio State University</h3>
+                </div>
+            </div>
+        </section>
     </div>
 
     <!-- About Page -->
@@ -743,7 +764,7 @@
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
-                        <img src="nm.png" alt="Dr. Nirav C. Merchant">
+                        <img src="nm.jpg" alt="Dr. Nirav C. Merchant">
                     </div>
                     <h4>Dr. Nirav C. Merchant</h4>
                     <p class="faculty-title">Co-Principal Investigator</p>
