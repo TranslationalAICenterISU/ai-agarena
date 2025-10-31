@@ -643,12 +643,12 @@
         </section>
         
     <section>
-  <div style="text-align: center; margin: 2rem 0; perspective: 1000px;">
+ <section>
+  <div class="image-container">
     <img 
       src="AI-AgARENA Overview.svg" 
       alt="AI-AgARENA Planning Diagram" 
-      class="roll-up"
-      style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+      class="roll-up">
   </div>
 
   <div class="about-content">
@@ -681,17 +681,33 @@
 </section>
 
 <style>
-/* Make image roll upward in 3D */
+.image-container {
+  text-align: center;
+  margin: 2rem 0;
+  perspective: 1000px;
+  position: relative;
+  height: 400px; /* Keeps space even when image rolls up */
+}
+
 .roll-up {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 1s ease, opacity 1s ease;
-  transform-origin: bottom center; /* Pivot from bottom */
+  transform-origin: bottom center;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
 }
 
 .roll-up:hover {
-  transform: rotateX(90deg) translateY(-50px); /* Roll upward */
-  opacity: 0; /* Fade out while rolling off */
+  transform: translateX(-50%) rotateX(90deg) translateY(-50px);
+  opacity: 0;
 }
 </style>
+
 
     </div>
 
