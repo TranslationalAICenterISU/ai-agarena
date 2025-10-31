@@ -644,12 +644,9 @@
         
     <section>
  <section>
-  <section class="ai-agarena-section">
-  <div class="image-container">
-    <img 
-      src="AI-AgARENA Overview.svg" 
-      alt="AI-AgARENA Planning Diagram" 
-      class="roll-image">
+<section class="ai-agarena-section">
+  <div class="image-wrapper">
+    <img src="AI-AgARENA Overview.svg" alt="AI-AgARENA Planning Diagram" class="roll-image">
   </div>
 
   <div class="about-content">
@@ -657,48 +654,27 @@
     
     <p>The mission is to serve as a national AI-Ag research hub that stimulates collaborations within an innovation ecosystem to improve sustainable farming practices, increase climate resiliency, and ensure food security. To achieve this, key technological innovations include the adaptation of AI-driven sensing, modeling, and actuation through autonomy algorithms, robotic systems, and scalable cyberinfrastructure. The testbed will enable AI-Ag technology demonstrations through at-scale implementations of science and serve as a venue for stakeholder education across public, private, NGO, and governmental organizations—advancing the future of climate-smart, data-driven, and sustainable agriculture.</p>
   </div>
-
-  <h2 style="margin-top: 2rem;">Partner Institutions</h2>
-  <div class="partners-grid">
-    <div class="partner-card">
-      <div class="partner-logo-placeholder">
-        <img src="isu.png" alt="Iowa State University Logo">
-      </div>
-      <h3>Iowa State University</h3>
-    </div>
-    <div class="partner-card">
-      <div class="partner-logo-placeholder">
-        <img src="UA.png" alt="University of Arizona Logo">
-      </div>
-      <h3>University of Arizona</h3>
-    </div>
-    <div class="partner-card">
-      <div class="partner-logo-placeholder">
-        <img src="OSU.png" alt="Ohio State University Logo">
-      </div>
-      <h3>Ohio State University</h3>
-    </div>
-  </div>
 </section>
 
 <style>
 .ai-agarena-section {
+  position: relative;
+  overflow: hidden;
   text-align: center;
   margin: 2rem 0;
-  overflow: hidden;
-  perspective: 1000px;
 }
 
-/* Image container */
-.image-container {
-  max-height: 500px;
+/* Image wrapper: manages the space and animation */
+.image-wrapper {
+  height: 400px;
   overflow: hidden;
-  transition: max-height 1s ease 0s; /* collapse starts after image fades */
+  transition: height 0.8s ease, opacity 0.8s ease;
+  position: relative;
 }
 
-/* Image */
+/* Image itself */
 .roll-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -706,26 +682,25 @@
   transform-origin: bottom center;
 }
 
-/* Text */
+/* Text starts below image */
 .about-content {
-  transition: transform 0.8s ease 0.8s, opacity 0.8s ease 0.8s;
-  /* delay ensures text moves only after image disappears */
+  padding: 1rem 2rem;
+  transition: margin-top 0.8s ease;
 }
 
-/* Hover animation */
+/* Hover effect */
 .ai-agarena-section:hover .roll-image {
-  transform: rotateX(90deg) translateY(-50px);
+  transform: translateY(-100%) rotateX(90deg);
   opacity: 0;
 }
 
-.ai-agarena-section:hover .image-container {
-  max-height: 0;
-  transition-delay: 0.8s; /* collapse happens after image fade */
+.ai-agarena-section:hover .image-wrapper {
+  height: 0;
+  opacity: 0;
 }
 
 .ai-agarena-section:hover .about-content {
-  transform: translateY(-60px);
-  opacity: 1;
+  margin-top: -1rem; /* smoothly fills the gap, no overlap */
 }
 </style>
 
