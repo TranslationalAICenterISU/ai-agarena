@@ -34,7 +34,6 @@
             flex-direction: column;
         }
 
-        /* Typography Hierarchy */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Times New Roman', Times, serif;
         }
@@ -91,6 +90,15 @@
             border-bottom: 2px solid var(--color-11);
         }
 
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
         /* Page Container */
         .page {
             display: none;
@@ -101,7 +109,7 @@
             display: block;
         }
 
-        /* Hero Section - Optimized for MacBook */
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             padding: 3rem 2rem 2.5rem;
@@ -193,7 +201,7 @@
             color: var(--color-5);
         }
 
-        /* About Section */
+        /* About Content */
         .about-content {
             background: white;
             padding: 2rem;
@@ -208,209 +216,36 @@
             font-size: 0.95rem;
         }
 
-        .highlight-box {
-            background: #f1f8e9;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 1.5rem 0;
-            border-left: 4px solid var(--color-4);
+        .about-content ul {
+            margin-left: 2rem;
+            margin-top: 1rem;
+            list-style: disc;
         }
 
-        .highlight-box h3 {
-            color: var(--color-5);
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
+        .about-content li {
+            margin-bottom: 0.5rem;
         }
 
-        .highlight-box p {
-            color: #333;
-            font-size: 0.95rem;
-        }
-
-        /* Infrastructure Section */
-        .infrastructure-grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        @media (max-width: 1400px) {
-            .infrastructure-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 900px) {
-            .infrastructure-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 600px) {
-            .infrastructure-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .infrastructure-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-            border-top: 4px solid var(--color-3);
-        }
-
-        .infrastructure-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .infrastructure-card h3 {
-            color: var(--color-4);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .infrastructure-card p {
-            line-height: 1.6;
-            margin-bottom: 0.7rem;
-            font-size: 0.9rem;
-        }
-
-        .infrastructure-card ul {
-            list-style: none;
-            margin-left: 0;
-            margin-top: 0.8rem;
-            padding-left: 0;
-        }
-
-        .infrastructure-card li {
-            margin-bottom: 0.6rem;
-            line-height: 1.5;
-            padding-left: 0;
-            font-size: 0.9rem;
-        }
-
-        .infrastructure-card li:before {
-            content: '';
-        }
-
-        /* Get Involved Section */
-        .involvement-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .involvement-card {
-            background: #fff3e0;
-            color: #333;
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            border: 2px solid var(--color-11);
-        }
-
-        .involvement-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        .involvement-card h3 {
-            margin-bottom: 0.8rem;
-            color: var(--color-8);
-            font-size: 1.2rem;
-        }
-
-        .involvement-card p {
-            margin-bottom: 0;
-            line-height: 1.6;
-            color: #333;
-            font-size: 0.9rem;
-        }
-
-        /* News Section */
-        .news-grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .news-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid var(--color-3);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        .news-item h3 {
-            color: var(--color-4);
-            margin-bottom: 0.8rem;
-            font-size: 1.4rem;
-        }
-
-        .news-item h4 {
-            color: var(--color-5);
-            margin-top: 1.2rem;
-            margin-bottom: 0.6rem;
-            font-size: 1.1rem;
-        }
-
-        .news-item p {
-            margin-bottom: 0.7rem;
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        .news-item ul {
-            margin-left: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .news-item ul li {
-            margin-bottom: 0.4rem;
-            font-size: 0.9rem;
-        }
-
-        .news-item strong {
-            color: var(--color-4);
-        }
-
-        .news-featured {
-            background: #e3f2fd;
-            border-left: 4px solid var(--color-4);
-        }
-
-        /* Contact Section */
-        .contact-info {
-            background: #e8f5e9;
-            color: #333;
-            padding: 2rem;
-            border-radius: 10px;
+        /* AI-AgARENA Image Section */
+        .ai-agarena-section {
             text-align: center;
-            border: 2px solid var(--color-4);
+            margin: 2rem 0;
+            padding: 0 2rem;
         }
 
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            color: var(--color-5);
-            font-size: 1.3rem;
+        .image-wrapper {
+            margin-bottom: 2rem;
+            overflow: hidden;
         }
 
-        .contact-info p {
-            font-size: 1rem;
-            margin: 0.8rem 0;
-            color: #333;
-        }
-
-        .contact-info strong {
-            display: inline-block;
-            margin-right: 0.5rem;
-            color: var(--color-4);
+        .overview-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
         }
 
         /* Partners Grid */
@@ -457,36 +292,58 @@
             font-size: 1.1rem;
         }
 
-        .partner-card p {
-            margin-top: 0.5rem;
-            color: #666;
+        /* Infrastructure Grid */
+        .infrastructure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .infrastructure-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--color-3);
+        }
+
+        .infrastructure-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .infrastructure-card h3 {
+            color: var(--color-4);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .infrastructure-card p {
+            line-height: 1.6;
+            margin-bottom: 0.7rem;
+            font-size: 0.9rem;
+        }
+
+        .infrastructure-card ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        .infrastructure-card li {
+            margin-bottom: 0.6rem;
+            line-height: 1.5;
             font-size: 0.9rem;
         }
 
         /* Faculty Grid */
         .faculty-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1.5rem;
             margin-top: 1.5rem;
-        }
-        
-        @media (max-width: 1200px) {
-            .faculty-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .faculty-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 500px) {
-            .faculty-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         .faculty-card {
@@ -539,6 +396,118 @@
             font-size: 0.85rem;
         }
 
+        /* Get Involved Grid */
+        .involvement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .involvement-card {
+            background: #fff3e0;
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            border: 2px solid var(--color-11);
+        }
+
+        .involvement-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        .involvement-card h3 {
+            margin-bottom: 0.8rem;
+            color: var(--color-8);
+            font-size: 1.2rem;
+        }
+
+        .involvement-card p {
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        .highlight-box {
+            background: #f1f8e9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--color-4);
+        }
+
+        .highlight-box h3 {
+            color: var(--color-5);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .news-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--color-3);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .news-item h3 {
+            color: var(--color-4);
+            margin-bottom: 0.8rem;
+            font-size: 1.4rem;
+        }
+
+        .news-item h4 {
+            color: var(--color-5);
+            margin-top: 1.2rem;
+            margin-bottom: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        .news-item ul {
+            margin-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            list-style: disc;
+        }
+
+        .news-item li {
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+
+        .news-featured {
+            background: #e3f2fd;
+            border-left: 4px solid var(--color-4);
+        }
+
+        /* Contact Section */
+        .contact-info {
+            background: #e8f5e9;
+            color: #333;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid var(--color-4);
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--color-5);
+            font-size: 1.3rem;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+            margin: 0.8rem 0;
+        }
+
         /* Footer */
         footer {
             background: var(--color-9);
@@ -550,18 +519,16 @@
 
         footer p {
             font-size: 0.9rem;
+            margin: 0.3rem 0;
         }
 
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 1rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -598,78 +565,6 @@
                 padding: 2rem 1rem;
             }
         }
-
-        /* Home page specific optimizations */
-        #home .about-content {
-            margin-bottom: 1.5rem;
-        }
-
-        #home section {
-            padding: 2rem 2rem;
-        }
-
-        #home .partners-grid {
-            margin-top: 1rem;
-        }
-
-        /* AI-AgARENA Section Styles */
-        .ai-agarena-section {
-            position: relative;
-            overflow: visible;
-            text-align: center;
-            margin: 2rem 0;
-            padding: 0 2rem;
-        }
-
-        /* Image wrapper: manages the space and animation */
-        .image-wrapper {
-            min-height: 400px;
-            overflow: visible;
-            transition: height 0.8s ease, opacity 0.8s ease;
-            position: relative;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Image itself */
-        .roll-image {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.8s ease, opacity 0.8s ease;
-            transform-origin: bottom center;
-            display: block;
-        }
-
-        /* Text starts below image */
-        .ai-agarena-section .about-content {
-            padding: 1rem 2rem;
-            transition: margin-top 0.8s ease;
-            position: relative;
-            z-index: 1;
-            clear: both;
-        }
-
-        /* Hover effect */
-        .ai-agarena-section:hover .roll-image {
-            transform: translateY(-100%) rotateX(90deg);
-            opacity: 0;
-        }
-
-        .ai-agarena-section:hover .image-wrapper {
-            height: 0;
-            min-height: 0;
-            opacity: 0;
-            margin-bottom: 0;
-        }
-
-        .ai-agarena-section:hover .about-content {
-            margin-top: -1rem;
-        }
     </style>
 </head>
 <body>
@@ -701,19 +596,20 @@
             </div>
         </section>
         
-            <section class="ai-agarena-section">
-                <div class="image-wrapper">
-                    <img src="AI-AgARENA Overview.svg" alt="AI-AgARENA Planning Diagram" class="roll-image">
-                </div>
+        <section class="ai-agarena-section">
+            <div class="image-wrapper">
+                <img src="AI-AgARENA Overview.svg" alt="AI-AgARENA Planning Diagram" class="overview-image">
+            </div>
 
-                <div class="about-content">
-                    <p><strong>'AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)'</strong> seeks to develop an <strong>AI-ready cyber-agricultural system</strong> that enables <strong>AI research for climate-smart agriculture</strong> by integrating <strong>autonomous farm management</strong>, <strong>continuous real-time sensing of soil and plant conditions and weather parameters</strong>, and <strong>intelligent data harvesting for analysis and visualization</strong>. AI-AgARENA is a <strong>multi-state, multi-site AI-ready farming testbed</strong> that integrates and enhances existing agricultural research platforms—complemented with <strong>wireless networking, sensors, ground robots, and drones</strong>—to develop and validate <strong>AI tools for cyber-agricultural systems</strong>.</p>
-                    
-                    <p>The mission is to <strong>serve as a national AI-Ag research hub</strong> that stimulates collaborations within an <strong>innovation ecosystem</strong> to improve <strong>sustainable farming practices, increase climate resiliency, and ensure food security</strong>. To achieve this, key technological innovations include the <strong>adaptation of AI-driven sensing, modeling, and actuation</strong> through <strong>autonomy algorithms, robotic systems, and scalable cyberinfrastructure</strong>. The testbed will enable <strong>AI-Ag technology demonstrations</strong> through at-scale implementations of science and serve as a <strong>venue for stakeholder education</strong> across public, private, NGO, and governmental organizations—advancing the future of <strong>climate-smart, data-driven, and sustainable agriculture</strong>.</p>
-                </div>
-            </section>
-            
-            <h2 style="margin-top: 2rem;">Partner Institutions</h2>
+            <div class="about-content">
+                <p><strong>'AI-ready Cyber-Agricultural Systems Testbed (AI-AgARENA)'</strong> seeks to develop an <strong>AI-ready cyber-agricultural system</strong> that enables <strong>AI research for climate-smart agriculture</strong> by integrating <strong>autonomous farm management</strong>, <strong>continuous real-time sensing of soil and plant conditions and weather parameters</strong>, and <strong>intelligent data harvesting for analysis and visualization</strong>. AI-AgARENA is a <strong>multi-state, multi-site AI-ready farming testbed</strong> that integrates and enhances existing agricultural research platforms—complemented with <strong>wireless networking, sensors, ground robots, and drones</strong>—to develop and validate <strong>AI tools for cyber-agricultural systems</strong>.</p>
+                
+                <p>The mission is to <strong>serve as a national AI-Ag research hub</strong> that stimulates collaborations within an <strong>innovation ecosystem</strong> to improve <strong>sustainable farming practices, increase climate resiliency, and ensure food security</strong>. To achieve this, key technological innovations include the <strong>adaptation of AI-driven sensing, modeling, and actuation</strong> through <strong>autonomy algorithms, robotic systems, and scalable cyberinfrastructure</strong>. The testbed will enable <strong>AI-Ag technology demonstrations</strong> through at-scale implementations of science and serve as a <strong>venue for stakeholder education</strong> across public, private, NGO, and governmental organizations—advancing the future of <strong>climate-smart, data-driven, and sustainable agriculture</strong>.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Partner Institutions</h2>
             <div class="partners-grid">
                 <div class="partner-card">
                     <div class="partner-logo-placeholder">
@@ -749,7 +645,7 @@
                 
                 <h3 style="margin-top: 1.5rem;">Foundation Projects</h3>
                 <p>Our team leads several major federally funded projects that provide the foundation for AI-AgARENA:</p>
-                <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <ul>
                     <li><strong>COALESCE:</strong> NSF CPS Frontier grant on sustainable agriculture focusing on context-aware learning for cyber-agricultural systems</li>
                     <li><strong>AIIRA:</strong> National AI Institute for Resilient Agriculture at Iowa State University</li>
                     <li><strong>ICICLE:</strong> National AI Institute at Ohio State with significant agricultural applications focus</li>
@@ -767,7 +663,7 @@
                     <h4>Dr. Soumik Sarkar</h4>
                     <p class="faculty-title">Principal Investigator</p>
                     <p class="faculty-affiliation">Iowa State University</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">AI & Machine Learning, Cyber-Physical Systems</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">AI & Machine Learning</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
@@ -776,7 +672,7 @@
                     <h4>Dr. Nirav C. Merchant</h4>
                     <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">University of Arizona</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Cyberinfrastructure, Data Science</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Cyberinfrastructure</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
@@ -785,7 +681,7 @@
                     <h4>Dr. Asheesh K. Singh</h4>
                     <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">Iowa State University</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Plant Science, Agronomy</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Plant Science</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
@@ -794,7 +690,7 @@
                     <h4>Dr. Christopher Stewart</h4>
                     <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">Ohio State University</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Sustainable Computing, Systems</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Sustainable Computing</p>
                 </div>
                 <div class="faculty-card">
                     <div class="faculty-photo-placeholder">
@@ -803,7 +699,7 @@
                     <h4>Dr. Hongwei Zhang</h4>
                     <p class="faculty-title">Co-Principal Investigator</p>
                     <p class="faculty-affiliation">Iowa State University</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Wireless Communications, Networking</p>
+                    <p style="font-size: 0.85rem; margin-top: 0.4rem; color: #666;">Wireless Communications</p>
                 </div>
             </div>
         </section>
@@ -814,7 +710,7 @@
         <section>
             <h2>Testbed Infrastructure</h2>
             <div class="about-content">
-                <p style="font-size: 1rem; text-align: center;">AI-AgARENA integrates cutting-edge physical and cyber infrastructure across multiple sites, covering diverse crops, geographies, soils, and climates.</p>
+                <p style="text-align: center;">AI-AgARENA integrates cutting-edge physical and cyber infrastructure across multiple sites, covering diverse crops, geographies, soils, and climates.</p>
             </div>
 
             <h3 style="text-align: center; color: var(--color-4); margin: 2rem 0 1rem;">Physical Infrastructure</h3>
@@ -822,56 +718,56 @@
             <div class="infrastructure-grid">
                 <div class="infrastructure-card">
                     <h3>Iowa State Core Facility</h3>
-                    <p><strong>40+ acres</strong> of dedicated agricultural research farm with comprehensive capabilities:</p>
+                    <p><strong>40+ acres</strong> of dedicated agricultural research farm:</p>
                     <ul>
-                        <li>Ground robots (Amiga) with 360° cameras</li>
-                        <li>Hyperspectral, thermal, and multispectral imaging</li>
-                        <li>440V power substation and solar hybrid systems</li>
-                        <li>5G connectivity through ARA wireless living lab</li>
+                        <li>Ground robots with 360° cameras</li>
+                        <li>Hyperspectral, thermal, multispectral imaging</li>
+                        <li>440V power and solar systems</li>
+                        <li>5G connectivity via ARA</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>ISU Digital Ag Innovation Lab</h3>
-                    <p>A globally unique living lab conducting production system research on <strong>1,000+ acres annually</strong>:</p>
+                    <p><strong>1,000+ acres annually</strong> for production system research:</p>
                     <ul>
-                        <li>High technology readiness level (TRL) testing facility</li>
-                        <li>35+ annual contracts with private industries</li>
-                        <li>90+ patents and technology transfer licenses</li>
-                        <li>60+ fully commercialized AgTech products</li>
+                        <li>High TRL testing facility</li>
+                        <li>35+ annual industry contracts</li>
+                        <li>90+ patents and licenses</li>
+                        <li>60+ commercialized products</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>UA Field Scanner</h3>
-                    <p>World's largest and most advanced automated phenotyping system:</p>
+                    <p>World's largest automated phenotyping system:</p>
                     <ul>
-                        <li>30-ton robotic gantry system</li>
-                        <li>Generates 2-6 terabytes of data per day</li>
-                        <li>High-quality camera and sensor suite</li>
-                        <li>Open-source control software for custom sensor integration</li>
+                        <li>30-ton robotic gantry</li>
+                        <li>2-6 TB data per day</li>
+                        <li>Advanced sensor suite</li>
+                        <li>Open-source control software</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>UA Yuma Farms</h3>
-                    <p><strong>500+ acres</strong> for diverse crop research:</p>
+                    <p><strong>500+ acres</strong> for diverse crops:</p>
                     <ul>
-                        <li>Valley Farm (274 acres): cotton, grains, vegetables</li>
-                        <li>Mesa Farm (240 acres): citrus production</li>
-                        <li>140-mile fiber network via Sun Corridor Network</li>
-                        <li>26 wireless towers enabling county-wide smart farming</li>
+                        <li>274 acres: cotton, grains, vegetables</li>
+                        <li>240 acres: citrus production</li>
+                        <li>140-mile fiber network</li>
+                        <li>26 wireless towers</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>OSU Molly Caren Center</h3>
-                    <p><strong>2,100-acre facility</strong> for corn, soybeans, and wheat:</p>
+                    <p><strong>2,100-acre facility</strong> for major crops:</p>
                     <ul>
-                        <li>Private 4G network (upgrading to 5G by Spring 2026)</li>
-                        <li>Download speeds: 150 Mbps, Latency: 60ms</li>
-                        <li>Support for vision-based autonomous vehicles and drones</li>
-                        <li>Focus on computational approaches for yield, resilience, sustainability</li>
+                        <li>Private 4G/5G network</li>
+                        <li>150 Mbps speeds, 60ms latency</li>
+                        <li>Autonomous vehicle support</li>
+                        <li>Computational agriculture focus</li>
                     </ul>
                 </div>
             </div>
@@ -881,192 +777,46 @@
             <div class="infrastructure-grid">
                 <div class="infrastructure-card">
                     <h3>ARA Wireless Living Lab</h3>
-                    <p>First-of-its-kind wireless connectivity for precision agriculture:</p>
+                    <p>Advanced wireless connectivity:</p>
                     <ul>
-                        <li>Coverage: 60+ km diameter across ISU campus, Ames, and rural areas</li>
-                        <li>Low-UHF massive MIMO to mmWave wireless access</li>
-                        <li>Long-distance backhaul and free-space optical communications</li>
-                        <li>Low-earth-orbit (LEO) satellite communications</li>
+                        <li>60+ km diameter coverage</li>
+                        <li>Low-UHF to mmWave access</li>
+                        <li>Long-distance backhaul</li>
+                        <li>LEO satellite communications</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>CyVerse Infrastructure</h3>
-                    <p>Integrated cyberinfrastructure for data-driven discovery:</p>
+                    <p>Data-driven discovery platform:</p>
                     <ul>
-                        <li>Federated data store for managing edge device and sensor data</li>
-                        <li>Kubernetes-based Discovery Environment with GPU support</li>
-                        <li>Data workbenches (Jupyter) and workflow managers (Argo, Nextflow)</li>
-                        <li>AI-VERDE: Metered API access to commercial and open-source LLMs</li>
+                        <li>Federated data store</li>
+                        <li>Kubernetes with GPU support</li>
+                        <li>Jupyter workbenches</li>
+                        <li>AI-VERDE API access</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
-                    <h3>Shared Software & Data Practices</h3>
+                    <h3>Software & Data Practices</h3>
                     <p><strong>Software:</strong></p>
                     <ul>
-                        <li>Infrastructure as Code (IaC): Terraform and Ansible templates</li>
-                        <li>ML/AI tools: MLFlow, Ray, DVC, Datachain</li>
-                        <li>Frameworks: PyTorch, JAX, TensorFlow</li>
-                        <li>CACAO platform for easy template management</li>
+                        <li>Terraform and Ansible templates</li>
+                        <li>MLFlow, Ray, DVC tools</li>
+                        <li>PyTorch, JAX, TensorFlow</li>
                     </ul>
                     <p style="margin-top: 0.8rem;"><strong>Data:</strong></p>
                     <ul>
-                        <li>Croissant standard for machine-readable metadata</li>
-                        <li>Discoverable via Google Dataset Search</li>
-                        <li>FAIR and CARE standards compliance</li>
-                        <li>AR/VR visualization for immersive data exploration</li>
+                        <li>Croissant metadata standard</li>
+                        <li>FAIR and CARE compliance</li>
+                        <li>AR/VR visualization</li>
                     </ul>
                 </div>
 
                 <div class="infrastructure-card">
                     <h3>Data & Model Governance</h3>
-                    <p>Comprehensive governance framework:</p>
+                    <p>Comprehensive governance:</p>
                     <ul>
-                        <li>Strict authentication and authorization enforcement</li>
-                        <li>Audit and tracking tools for data and model usage</li>
-                        <li>Enhanced tagging for improved data discovery</li>
-                        <li>Link validity checking and duplicate detection</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Get Involved Page -->
-    <div id="get-involved" class="page">
-        <section>
-            <h2>Get Involved with AI-AgARENA</h2>
-            <div class="about-content">
-                <p style="font-size: 1rem; text-align: center;">Join our growing community of researchers, students, industry partners, and stakeholders shaping the future of AI-driven agriculture.</p>
-            </div>
-            
-            <div class="involvement-grid">
-                <div class="involvement-card">
-                    <h3>AI Researchers</h3>
-                    <p>Access our multi-site testbed for developing and validating AI algorithms and tools. Leverage state-of-the-art sensing platforms, robotics, and data infrastructure for your research projects. Join our network of guest researchers beta-testing cutting-edge agricultural AI applications.</p>
-                </div>
-
-                <div class="involvement-card">
-                    <h3>Agricultural Scientists</h3>
-                    <p>Collaborate on research integrating domain expertise with advanced AI capabilities. Access comprehensive data collection, analysis tools, and visualization platforms to advance plant breeding, crop management, and sustainable farming practices.</p>
-                </div>
-
-                <div class="involvement-card">
-                    <h3>Students & Educators</h3>
-                    <p>Participate in internships, coursework, and hands-on training programs. Engage with Farmverse VR learning experiences. Access educational resources and workshops spanning K-12 through graduate levels, building skills for the future agricultural workforce.</p>
-                </div>
-
-                <div class="involvement-card">
-                    <h3>Industry Partners</h3>
-                    <p>Collaborate on technology development, testing, and commercialization. Access facilities for product validation and stakeholder demonstrations. Partner on research projects ranging from prototypes to high-TRL commercial applications in AgTech innovation.</p>
-                </div>
-
-                <div class="involvement-card">
-                    <h3>Farmers & Extension</h3>
-                    <p>Participate in guided demonstrations of climate-smart farming technologies. Provide feedback on practical applications and real-world needs. Engage in extension programs designed to improve adoption of AI-driven agricultural practices.</p>
-                </div>
-
-                <div class="involvement-card">
-                    <h3>Government & Policy</h3>
-                    <p>Partner with us to ensure AI-AgARENA provides valuable tools for the farming community while maintaining data privacy and security. Collaborate on developing safe AI research practices and guidelines for agricultural technology deployment.</p>
-                </div>
-            </div>
-
-            <div class="highlight-box" style="margin-top: 2rem;">
-                <h3>Planning Workshops & Community Engagement</h3>
-                <p>We regularly organize workshops, seminars, and webinars to engage the broader AI and agricultural communities. Join our mailing list and participate in upcoming events to help shape the future of AI-AgARENA and contribute your expertise to this national effort.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- News & Events Page -->
-    <div id="news" class="page">
-        <section>
-            <h2>News & Events</h2>
-            <div class="news-grid">
-                <div class="news-item news-featured">
-                    <h3>AI-AgARENA Testbed Planning Workshop</h3>
-                    <p>Thank you for your interest in our upcoming AI-AgARENA Testbed Planning Workshop at Iowa State University. This event will bring together researchers, industry partners, and technology builders to shape the future of AI-driven agricultural innovation.</p>
-                    
-                    <h4>Event Details</h4>
-                    <p><strong>Date:</strong> Friday, November 7, 2025</p>
-                    <p><strong>Time:</strong> 8:30 AM – 4:30 PM</p>
-                    <p><strong>Location:</strong> Iowa State University, Ames, IA</p>
-                    <p><strong>Nearest Airport:</strong> Des Moines International Airport (DSM), Des Moines, IA</p>
-                    
-                    <h4>Workshop Highlights</h4>
-                    <ul>
-                        <li><strong>Welcome & Keynote:</strong> Opening remarks by Dr. Soumik Sarkar and a presentation from Rick van de Zedde (Wageningen University & Research, Netherlands).</li>
-                        <li><strong>Use-Case Breakouts:</strong> Explore themes such as Algorithms, Hardware, Networking/Wireless, and Agricultural Applications. Share challenges and use cases to guide testbed development.</li>
-                        <li><strong>Collaborative Planning:</strong> Work together to identify impactful ideas, discuss infrastructure needs, and plan next steps for the AI-AgARENA testbed.</li>
-                        <li><strong>Networking & Lunch:</strong> Engage in discussions on financial planning and builder contributions.</li>
-                        <li><strong>Closing Session:</strong> Website launch and roadmap for continued involvement.</li>
-                    </ul>
-                    
-                    <p>This workshop is an opportunity to influence the design and capabilities of a cutting-edge agricultural AI testbed and we greatly appreciate your participation. Your insights will help ensure the platform meets real-world needs and accelerates innovation.</p>
-                    
-                    <p style="background: white; padding: 1rem; border-radius: 5px; margin-top: 1rem;"><strong>Important:</strong> Please let us know about your dietary and accommodation needs by completing the registration form by <strong>Friday, October 31, 2025</strong>.</p>
-                    
-                    <p style="margin-top: 1rem;"><em>We look forward to your participation in shaping the future of AI in agriculture!</em></p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <section>
-            <h2>Contact Us</h2>
-            <div class="contact-info">
-                <h3>Have questions or want to collaborate?</h3>
-                <p style="margin-top: 1.5rem;"><strong>Email:</strong>  aiagarena@iastate.edu</p>
-                <p><strong>Location:</strong> Iowa State University, Ames, IA 50011</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div style="max-width: 1200px; margin: 0 auto; padding: 1rem 2rem;">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
-                <img src="nsf-logo.png" alt="National Science Foundation" style="height: 100px; width: auto;">
-            </div>
-            <p>&copy; 2025 AI-AgARENA. All rights reserved.</p>
-            <p>Advancing AI for Climate-Smart Agriculture</p>
-            <p style="margin-top: 0.5rem; font-size: 0.85rem;">A National Science Foundation Planning Grant Project</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        function navigateTo(pageId) {
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            const selectedPage = document.getElementById(pageId);
-            if (selectedPage) {
-                selectedPage.classList.add('active');
-            }
-            
-            const navLinks = document.querySelectorAll('.nav-links a');
-            navLinks.forEach(link => link.classList.remove('active'));
-            const activeLink = document.querySelector(`[data-page="${pageId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
-            
-            window.scrollTo(0, 0);
-            document.getElementById('navLinks').classList.remove('active');
-        }
-
-        window.addEventListener('load', () => {
-            navigateTo('home');
-        });
-    </script>
-</body>
-</html>
+                        <li>Authentication & authorization</li>
+                        <li>Audit and tracking tools</li>
+                        <li>Enhanced data discovery
